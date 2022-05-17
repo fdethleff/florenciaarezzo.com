@@ -4,8 +4,6 @@ import { GLTFLoader } from "GLTFLoader";
 
 // Constants
 
-const heightScaleFactor = 1;
-
 // Scene
 
 const scene = new THREE.Scene();
@@ -46,7 +44,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(-5, -10, 12);
+camera.position.set(0, 0, 15);
 camera.aspect = sizes.width / sizes.height;
 camera.updateProjectionMatrix();
 
@@ -55,21 +53,33 @@ camera.updateProjectionMatrix();
 const loader = new GLTFLoader();
 const assetUrl = "assets/meshes/hoodie.gltf";
 
+const frontX = 0;
+const frontY = -14;
+const frontZ = 0;
+
+const backLeftX = 10;
+const backLeftY = -14;
+const backLeftZ = -10;
+
+const backRightX = -10;
+const backRightY = -14;
+const backRightZ = -10;
+
 loader.load(assetUrl, function (gltf) {
-  gltf.scene.position.set(-8, -15, 0);
-  gltf.scene.scale.set(10, 10 / heightScaleFactor, 10);
+  gltf.scene.position.set(frontX, frontY, frontZ);
+  gltf.scene.scale.set(10, 10, 10);
   scene.add(gltf.scene);
 });
 
 loader.load(assetUrl, function (gltf) {
-  gltf.scene.position.set(-24, -15, -20);
-  gltf.scene.scale.set(10, 10 / heightScaleFactor, 10);
+  gltf.scene.position.set(backLeftX, backLeftY, backLeftZ);
+  gltf.scene.scale.set(10, 10, 10);
   scene.add(gltf.scene);
 });
 
 loader.load(assetUrl, function (gltf) {
-  gltf.scene.position.set(-4, -15, -20);
-  gltf.scene.scale.set(10, 10 / heightScaleFactor, 10);
+  gltf.scene.position.set(backRightX, backRightY, backRightZ);
+  gltf.scene.scale.set(10, 10, 10);
   scene.add(gltf.scene);
 });
 
@@ -95,12 +105,12 @@ scene.add(spotLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableZoom = false;
-controls.autoRotate = true;
-controls.autoRotateSpeed = 0.2;
-controls.enablePan = false;
-controls.maxPolarAngle = Math.PI / 2;
-controls.minPolarAngle = Math.PI / 2;
-controls.enableDamping = true;
+
+// controls.autoRotateSpeed = 0.2;
+// controls.enablePan = false;
+// controls.maxPolarAngle = Math.PI / 2;
+// controls.minPolarAngle = Math.PI / 2;
+// controls.enableDamping = true;
 
 // Helpers
 
@@ -125,3 +135,10 @@ function animate() {
 }
 
 animate();
+
+let scrollY = window.scrollY;
+
+window.addEventListener("scroll", function () {
+  scrollY = window.scrollY;
+  console.log(scrollY);
+});
