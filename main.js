@@ -21,9 +21,12 @@ const sizes = {
 window.addEventListener("resize", () => {
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
+
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
+
   renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 // Renderer
@@ -45,20 +48,21 @@ camera.position.set(-5, -10, 12);
 // Mesh objects
 
 const loader = new GLTFLoader();
+const assetUrl = "assets/meshes/hoodie.gltf";
 
-loader.load("assets/meshes/hoodie.gltf", function (gltf) {
+loader.load(assetUrl, function (gltf) {
   gltf.scene.position.set(-8, -15, 0);
   gltf.scene.scale.set(10, 10 / heightScaleFactor, 10);
   scene.add(gltf.scene);
 });
 
-loader.load("assets/meshes/hoodie.gltf", function (gltf) {
+loader.load(assetUrl, function (gltf) {
   gltf.scene.position.set(-24, -15, -20);
   gltf.scene.scale.set(10, 10 / heightScaleFactor, 10);
   scene.add(gltf.scene);
 });
 
-loader.load("assets/meshes/hoodie.gltf", function (gltf) {
+loader.load(assetUrl, function (gltf) {
   gltf.scene.position.set(-4, -15, -20);
   gltf.scene.scale.set(10, 10 / heightScaleFactor, 10);
   scene.add(gltf.scene);
