@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
+          "OrbitControls": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/controls/OrbitControls.js",
+          "FBXLoader": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/loaders/FBXLoader.js",
+          "GLTFLoader": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+    </script>
+
+    <title>florenciaarezzo.com</title>
+  </head>
+  <body>
+    <!-- Hero animation -->
+
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="assets/videos/walking-animation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay-title">
+        <h1>FLORENCIAAREZZO</h1>
+      </div>
+      <div class="overlay-subtitle">
+        <h2>3DDESIGNER</h2>
+      </div>
+      <div class="overlay-icon-right">
+        <img src="assets/icons/landing.png" alt="menu" />
+      </div>
+    </div>
+
+    <!-- Hero animation -->
+
+    <!-- 3D scene -->
+
+    <div id="scene" class="bg-dark container-fluid p-0 m-0">
+      <canvas id="scene-container"></canvas>
+    </div>
+    <script type="module" src="./main.js"></script>
+
+    <!-- 3D scene -->
+
+    <!-- Footer -->
+    <footer
+      class="text-center text-white"
+      style="background-color: rgba(0, 0, 0, 0.2)"
+    >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0 mt-5 mb-5">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Email -->
+          <a class="btn btn-floating m-1" href="#!" role="button"
+            ><img
+              class="social-media-icon"
+              src="assets/icons/email.png"
+              alt="email"
+            />
+          </a>
+          <!-- Divider -->
+          <img
+            class="divider-vertical"
+            src="assets/icons/divider-vertical.png"
+            alt="divider"
+          />
+          <!-- Instagram -->
+          <a class="btn btn-floating m-1" href="#!" role="button"
+            ><img
+              class="social-media-icon"
+              src="assets/icons/insta.png"
+              alt="instagram"
+            />
+          </a>
+          <!-- Divider -->
+          <img
+            class="divider-vertical"
+            src="assets/icons/divider-vertical.png"
+            alt="divider"
+          />
+          <!-- LinkedIn -->
+          <a class="btn btn-floating m-1" href="#!" role="button"
+            ><img
+              class="social-media-icon"
+              src="assets/icons/linkedin.png"
+              alt="linkedin"
+            />
+          </a>
+          <!-- Divider -->
+          <img
+            class="divider-vertical"
+            src="assets/icons/divider-vertical.png"
+            alt="divider"
+          />
+          <!-- Whatsapp -->
+          <a class="btn btn-floating m-1" href="#!" role="button"
+            ><img
+              class="social-media-icon"
+              src="assets/icons/whatsapp.png"
+              alt="whatsapp"
+            />
+          </a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

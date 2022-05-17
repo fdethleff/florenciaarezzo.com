@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.social-media-icon {
+  height: 1.0rem;
+  margin: 0.5rem;
+  ;
+}
+
+.divider-vertical {
+  height: 2rem;
+  width: .06rem;
+  margin: 1rem;
+}
+
+.video-container {
+  position: relative;
+}
+
+video {
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'DolceVitaHeavyBold';
+  src: url("assets/fonts/DolceVitaHeavyBold.ttf");
+}
+
+@font-face {
+  font-family: 'DolceVitaLight';
+  src: url("assets/fonts/DolceVitaLight.ttf");
+}
+
+@font-face {
+  font-family: 'DolceVita';
+  src: url("assets/fonts/DolceVita.ttf");
+}
+
+.overlay-title {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-subtitle {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-icon-right {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+h1 {
+  color: white;
+  font-family: 'DolceVitaHeavyBold';
+  font-size: 1.5rem;
+  letter-spacing: 2rem;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-family: 'DolceVita';
+  font-size: .9rem;
+  letter-spacing: 1.1rem;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+p {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
