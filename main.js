@@ -32,6 +32,7 @@ window.addEventListener("resize", () => {
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById("scene-container"),
+  alpha: true,
 });
 
 renderer.setSize(sizes.width, sizes.height);
@@ -85,10 +86,10 @@ scene.add(spotLight);
 // Background
 
 //Load background texture
-const textureloader = new THREE.TextureLoader();
-textureloader.load("assets/images/scene-background.png", function (texture) {
-  scene.background = texture;
-});
+// const textureloader = new THREE.TextureLoader();
+// textureloader.load("assets/images/scene-background.png", function (texture) {
+//   scene.background = texture;
+// });
 
 // Controls
 
@@ -98,7 +99,7 @@ controls.autoRotate = true;
 controls.autoRotateSpeed = 0.2;
 controls.enablePan = false;
 controls.maxPolarAngle = Math.PI / 2;
-controls.minPolarAngle = Math.PI / 3;
+controls.minPolarAngle = Math.PI / 2;
 controls.enableDamping = true;
 
 // Helpers

@@ -4,12 +4,12 @@
 }
 
 body {
-  background-color: black;
+  background-color: #1e1a20;
 }
 
 .social-media-icon {
   height: 1.0rem;
-  margin: 0.5rem;
+  margin: 2rem;
   ;
 }
 
@@ -96,14 +96,4 @@ h2 {
   text-align: center;
 }
 
-main {
-  margin: 0 auto;
-  width: 80%;
-}
 
-p {
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7rem;
-}
