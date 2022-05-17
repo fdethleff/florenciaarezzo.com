@@ -35,6 +35,9 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById("scene-container"),
 });
 
+renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
 // Camera
 
 const camera = new THREE.PerspectiveCamera(
@@ -44,6 +47,8 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 camera.position.set(-5, -10, 12);
+camera.aspect = sizes.width / sizes.height;
+camera.updateProjectionMatrix();
 
 // Mesh objects
 
