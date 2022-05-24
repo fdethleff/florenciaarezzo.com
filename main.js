@@ -113,7 +113,6 @@ loadGLTFMesh(asset4, 12, -8, 0, 8);
 
 //
 //
-//
 
 function addLights() {
   const keyLight = new THREE.PointLight(0xffffff, 5);
