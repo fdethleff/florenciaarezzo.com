@@ -21,6 +21,7 @@
       async
       src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js"
     ></script>
+
     <script type="importmap">
       {
         "imports": {
@@ -31,7 +32,11 @@
       }
     </script>
 
+    <!-- Page title -->
     <title>florenciaarezzo.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
   </head>
   <body>
     <!-- Hero animation -->
@@ -47,8 +52,11 @@
       <div class="overlay-subtitle">
         <h2>3DDESIGNER</h2>
       </div>
-      <div class="overlay-icon-right">
-        <img src="assets/icons/landing.png" alt="menu" />
+      <div class="overlay-top-left">
+        <a href="pages/about.html">About</a>
+      </div>
+      <div class="overlay-top-right">
+        <a href="pages/projects.html">Projects</a>
       </div>
     </div>
 
@@ -56,7 +64,7 @@
 
     <!-- 3D scene -->
 
-    <div id="scene" class="bg-dark container-fluid p-0 m-0">
+    <div id="scene" class="container-fluid p-0 m-0">
       <canvas id="scene-container"></canvas>
     </div>
     <script type="module" src="./main.js"></script>
@@ -64,59 +72,68 @@
     <!-- 3D scene -->
 
     <!-- Footer -->
-    <footer class="text-center text-white">
-      <section class="mb-2">
-        <!-- Email -->
-        <a class="btn btn-floating m-1" href="#!" role="button"
-          ><img
-            class="social-media-icon"
-            src="assets/icons/email.png"
-            alt="email"
+    <footer class="bg-dark text-center text-white">
+      <div class="container mt-5 mb-5">
+        <section class="mb-4 mt-4">
+          <!-- Email -->
+          <p class="btn btn-floating m-1 text-white" style="font-size: 1rem">
+            florencia.arezzo@base9.one
+            <img
+              class="social-media-icon"
+              src="assets/icons/email.png"
+              alt="email"
+            />
+          </p>
+
+          <!-- Divider -->
+          <img
+            class="divider-vertical"
+            src="assets/icons/divider-vertical.png"
+            alt="divider"
           />
-        </a>
-        <!-- Divider -->
-        <img
-          class="divider-vertical"
-          src="assets/icons/divider-vertical.png"
-          alt="divider"
-        />
-        <!-- Instagram -->
-        <a class="btn btn-floating m-1" href="#!" role="button"
-          ><img
-            class="social-media-icon"
-            src="assets/icons/insta.png"
-            alt="instagram"
+          <!-- Instagram -->
+          <a class="btn btn-floating m-1" href="#!" role="button"
+            ><img
+              class="social-media-icon"
+              src="assets/icons/insta.png"
+              alt="instagram"
+            />
+          </a>
+          <!-- Divider -->
+          <img
+            class="divider-vertical"
+            src="assets/icons/divider-vertical.png"
+            alt="divider"
           />
-        </a>
-        <!-- Divider -->
-        <img
-          class="divider-vertical"
-          src="assets/icons/divider-vertical.png"
-          alt="divider"
-        />
-        <!-- LinkedIn -->
-        <a class="btn btn-floating m-1" href="#!" role="button"
-          ><img
-            class="social-media-icon"
-            src="assets/icons/linkedin.png"
-            alt="linkedin"
+          <!-- LinkedIn -->
+          <a class="btn btn-floating m-1" href="#!" role="button"
+            ><img
+              class="social-media-icon"
+              src="assets/icons/linkedin.png"
+              alt="linkedin"
+            />
+          </a>
+          <!-- Divider -->
+          <img
+            class="divider-vertical"
+            src="assets/icons/divider-vertical.png"
+            alt="divider"
           />
-        </a>
-        <!-- Divider -->
-        <img
-          class="divider-vertical"
-          src="assets/icons/divider-vertical.png"
-          alt="divider"
-        />
-        <!-- Whatsapp -->
-        <a class="btn btn-floating m-1" href="#!" role="button"
-          ><img
-            class="social-media-icon"
-            src="assets/icons/whatsapp.png"
-            alt="whatsapp"
-          />
-        </a>
-      </section>
+          <!-- Whatsapp -->
+          <a
+            class="btn btn-floating m-1 text-white"
+            href="#!"
+            role="button"
+            style="font-size: 1rem"
+          >
+            <img
+              class="social-media-icon"
+              src="assets/icons/whatsapp.png"
+              alt="whatsapp"
+            />+34 672 366 961
+          </a>
+        </section>
+      </div>
     </footer>
     <!-- Footer -->
 

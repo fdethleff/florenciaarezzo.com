@@ -1,21 +1,31 @@
-* {
+html {
   margin: 0;
-  padding: 0;
+  height: 100%;
 }
 
 body {
-  background-color: #1e1a20;
+  margin: 0;
+  height: 100%;
+  /* background-color: #1e1a20; */
+  background-color: #e9e9e9;
+}
+
+#scene-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* background: url(resources/images/daikanyama.jpg) no-repeat center center; */
+  /* background-size: cover;  */
 }
 
 .social-media-icon {
-  height: 1.0rem;
-  margin: 2rem;
-  ;
+  height: 0.8rem;
+  margin: 1rem;
 }
 
 .divider-vertical {
   height: 2rem;
-  width: .06rem;
+  width: 0.06rem;
   margin: 1rem;
 }
 
@@ -30,17 +40,17 @@ video {
 }
 
 @font-face {
-  font-family: 'DolceVitaHeavyBold';
+  font-family: "DolceVitaHeavyBold";
   src: url("assets/fonts/DolceVitaHeavyBold.ttf");
 }
 
 @font-face {
-  font-family: 'DolceVitaLight';
+  font-family: "DolceVitaLight";
   src: url("assets/fonts/DolceVitaLight.ttf");
 }
 
 @font-face {
-  font-family: 'DolceVita';
+  font-family: "DolceVita";
   src: url("assets/fonts/DolceVita.ttf");
 }
 
@@ -68,21 +78,25 @@ video {
   justify-content: center;
 }
 
-.overlay-icon-right {
-  background: rgba(0, 0, 0, 0);
+.overlay-top-right {
   position: absolute;
-  top: 0;
-  right: 1rem;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
+  top: 2rem;
+  right: 2rem;
+  align-items: top;
   justify-content: right;
+}
+
+.overlay-top-left {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  align-items: top;
+  justify-content: left;
 }
 
 h1 {
   color: white;
-  font-family: 'DolceVitaHeavyBold';
+  font-family: "DolceVitaHeavyBold";
   font-size: 1.5rem;
   letter-spacing: 2rem;
   text-align: center;
@@ -90,10 +104,16 @@ h1 {
 
 h2 {
   color: white;
-  font-family: 'DolceVita';
-  font-size: .9rem;
+  font-family: "DolceVita";
+  font-size: 0.9rem;
   letter-spacing: 1.1rem;
   text-align: center;
 }
 
-
+a {
+  color: white;
+  text-decoration: none;
+  font-family: "DolceVitaHeavyBold";
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
