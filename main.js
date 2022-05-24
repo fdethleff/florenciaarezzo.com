@@ -90,10 +90,10 @@ const cameraPole = createCameraPole(camera);
 
 const gltfLoader = new GLTFLoader(loadingManager);
 
-const asset1 = "assets/meshes/hoodie.gltf";
-const asset2 = "assets/meshes/jacket.gltf";
-const asset3 = "assets/meshes/pants.gltf";
-const asset4 = "assets/meshes/trench.gltf";
+const asset1 = "assets/meshes/model-hoodie.gltf";
+const asset2 = "assets/meshes/model-jacket.gltf";
+const asset3 = "assets/meshes/model-pants.gltf";
+const asset4 = "assets/meshes/model-trench.gltf";
 
 let meshObjects = [];
 
