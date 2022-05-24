@@ -41,7 +41,7 @@
   <body>
     <!-- Hero animation -->
 
-    <div class="video-container">
+    <div id="hero-video" class="video-container">
       <video autoplay loop muted>
         <source src="assets/videos/walking-animation.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -64,8 +64,11 @@
 
     <!-- 3D scene -->
 
-    <div id="scene" class="container-fluid p-0 m-0">
-      <canvas id="scene-container"></canvas>
+    <div>
+      <div style="position: relative">
+        <canvas id="scene"></canvas>
+        <div class="loading-bar"></div>
+      </div>
     </div>
     <script type="module" src="./main.js"></script>
 
@@ -76,7 +79,7 @@
       <div class="container mt-5 mb-5">
         <section class="mb-4 mt-4">
           <!-- Email -->
-          <p class="btn btn-floating m-1 text-white" style="font-size: 1rem">
+          <p class="btn btn-floating m-1 text-white" style="font-size: 0.9rem">
             florencia.arezzo@base9.one
             <img
               class="social-media-icon"
@@ -120,18 +123,18 @@
             alt="divider"
           />
           <!-- Whatsapp -->
-          <a
+          <p
             class="btn btn-floating m-1 text-white"
             href="#!"
             role="button"
-            style="font-size: 1rem"
+            style="font-size: 0.9rem"
           >
             <img
               class="social-media-icon"
               src="assets/icons/whatsapp.png"
               alt="whatsapp"
             />+34 672 366 961
-          </a>
+          </p>
         </section>
       </div>
     </footer>
@@ -143,5 +146,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   </body>
 </html>

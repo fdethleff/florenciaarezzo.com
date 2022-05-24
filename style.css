@@ -6,16 +6,32 @@ html {
 body {
   margin: 0;
   height: 100%;
-  /* background-color: #1e1a20; */
-  background-color: #e9e9e9;
+  background-color: #1e1a20;
 }
 
-#scene-container {
+#scene {
+  position: relative;
   width: 100%;
   height: 100%;
   display: block;
-  /* background: url(resources/images/daikanyama.jpg) no-repeat center center; */
-  /* background-size: cover;  */
+  outline: none;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  background-color: #ffffff;
+  transform-origin: top left;
+  transition: transform 0.5s;
+  will-change: transform;
+}
+
+.loading-bar.ended {
+  transform-origin: top right;
+  transition: transform 1.5s ease-in-out;
 }
 
 .social-media-icon {
