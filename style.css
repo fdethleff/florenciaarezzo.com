@@ -1,58 +1,31 @@
-html {
-  margin: 0;
-  height: 100%;
-}
-
 body {
-  margin: 0;
-  height: 100%;
-  background-color: #1e1a20;
-}
-
-#scene {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: block;
-  outline: none;
-}
-
-.loading-bar {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 2px;
-  transform: scaleX(0);
-  background-color: #ffffff;
-  transform-origin: top left;
-  transition: transform 0.5s;
-  will-change: transform;
-}
-
-.loading-bar.ended {
-  transform-origin: top right;
-  transition: transform 1.5s ease-in-out;
-}
-
-.social-media-icon {
-  height: 0.8rem;
-  margin: 1rem;
-}
-
-.divider-vertical {
-  height: 2rem;
-  width: 0.06rem;
-  margin: 1rem;
-}
-
-.video-container {
-  position: relative;
+  /* background-color: rgb(203, 203, 203); */
+  background-color: black;
 }
 
 video {
-  height: auto;
-  vertical-align: middle;
   width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.footer {
+  height: 100px;
+  line-height: 100px;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+}
+
+.placeholder {
+  position: relative;
+  width: 100%;
+  height: 3000px;
 }
 
 @font-face {
@@ -68,68 +41,4 @@ video {
 @font-face {
   font-family: "DolceVita";
   src: url("assets/fonts/DolceVita.ttf");
-}
-
-.overlay-title {
-  background: rgba(0, 0, 0, 0);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-subtitle {
-  background: rgba(0, 0, 0, 0);
-  position: absolute;
-  top: 5rem;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-top-right {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  align-items: top;
-  justify-content: right;
-}
-
-.overlay-top-left {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  align-items: top;
-  justify-content: left;
-}
-
-h1 {
-  color: white;
-  font-family: "DolceVitaHeavyBold";
-  font-size: 1.5rem;
-  letter-spacing: 2rem;
-  text-align: center;
-}
-
-h2 {
-  color: white;
-  font-family: "DolceVita";
-  font-size: 0.9rem;
-  letter-spacing: 1.1rem;
-  text-align: center;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-family: "DolceVitaHeavyBold";
-  font-size: 1.1rem;
-  letter-spacing: 0.1rem;
 }
