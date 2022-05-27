@@ -41,9 +41,10 @@ img {
 }
 
 .nav-item {
-  font-family: "DolceVita";
+  font-family: "DolceVitaHeavyBold";
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
 }
 
 .hero-title {
@@ -81,7 +82,7 @@ img {
   top: 65%;
   left: 90%;
   z-index: 2;
-  animation: pulsate 4s infinite;
+  animation: pulsateFinger 4s infinite;
 }
 
 .click-me {
@@ -91,7 +92,7 @@ img {
   width: 5rem;
   height: 5rem;
   text-align: center;
-  top: 65%;
+  top: 52%;
   left: 90%;
   font-family: "DolceVitaHeavyBold";
   z-index: 2;
@@ -165,21 +166,39 @@ img {
 @keyframes pulsate {
   0% {
     opacity: 1;
+    width: 6rem;
+    height: 6rem;
+    line-height: 6rem;
+  }
+  50% {
+    opacity: 0.4;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+  }
+  100% {
+    opacity: 1;
+    width: 6rem;
+    height: 6rem;
+    line-height: 6rem;
+  }
+}
+
+@keyframes pulsateFinger {
+  0% {
+    opacity: 1;
     width: 4rem;
     height: 4rem;
-    /* line-height: 6rem; */
   }
   50% {
     opacity: 0.4;
     width: 3rem;
     height: 3rem;
-    /* line-height: 5rem; */
   }
   100% {
     opacity: 1;
     width: 4rem;
     height: 4rem;
-    /* line-height: 6rem; */
   }
 }
 
