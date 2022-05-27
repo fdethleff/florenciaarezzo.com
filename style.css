@@ -5,10 +5,10 @@ body {
   padding: 0;
 }
 
-.hero-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+hr {
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 video {
@@ -16,6 +16,19 @@ video {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.img-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar {
@@ -28,12 +41,8 @@ video {
 }
 
 .nav-item {
-  flex: 1 1 4px;
+  font-family: "DolceVita";
   color: #fff;
-  font-family: "DolceVitaHeavyBold";
-  letter-spacing: 0.1rem;
-  margin-right: 2rem;
-  font-size: 1.1rem;
 }
 
 .hero-title {
@@ -73,7 +82,6 @@ video {
   width: 5rem;
   height: 5rem;
   text-align: center;
-  /* line-height: 3rem; */
   top: 65%;
   left: 90%;
   font-family: "DolceVitaHeavyBold";
@@ -87,25 +95,9 @@ video {
   transform: rotate(-20deg);
 }
 
-.img-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-img {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.footer {
-  height: 100px;
-  line-height: 100px;
-  background-color: black;
-  color: aliceblue;
-  text-align: center;
+.footer-icon {
+  height: 1rem;
+  width: auto;
 }
 
 @font-face {
@@ -119,13 +111,13 @@ img {
 }
 
 @font-face {
-  font-family: "RobotoRegular";
-  src: url("assets/fonts/Roboto-Regular.ttf");
+  font-family: "RobotoBold";
+  src: url("assets/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
-  font-family: "RobotoBold";
-  src: url("assets/fonts/Roboto-Bold.ttf");
+  font-family: "RobotoRegular";
+  src: url("assets/fonts/Roboto-Regular.ttf");
 }
 
 .down-arrow {
@@ -164,23 +156,29 @@ img {
 @keyframes pulsate {
   0% {
     opacity: 1;
-
     width: 6rem;
     height: 6rem;
     line-height: 6rem;
   }
   50% {
     opacity: 0.4;
-
     width: 5rem;
     height: 5rem;
     line-height: 5rem;
   }
   100% {
     opacity: 1;
-
     width: 6rem;
     height: 6rem;
     line-height: 6rem;
   }
+}
+
+.footer-text {
+  font-family: "RobotoRegular";
+  font-size: small;
+}
+
+.footer-divider {
+  height: 40px;
 }

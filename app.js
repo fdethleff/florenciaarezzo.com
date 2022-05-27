@@ -1,14 +1,18 @@
 const { createApp } = Vue;
 
+// --------------------------------------- //
+
 const landingHero = createApp({
   data() {
     return {
       isPlaying: false,
+      windowHeight: window.innerHeight,
       styleObject: {
-        position: "absolute",
+        position: "fixed",
         height: "100%",
         width: "100%",
         transform: "translateY(0px)",
+        transition: "transform 1s ease-in-out",
       },
     };
   },
@@ -23,8 +27,13 @@ const landingHero = createApp({
         this.isPlaying = false;
       }
     },
+
     handleScroll() {
-      this.styleObject.transform = `translateY(${-window.scrollY}px)`;
+      if (window.scrollY > this.windowHeight / 4) {
+        this.styleObject.transform = `translateY(${-this.windowHeight}px)`;
+      } else if (window.scrollY < this.windowHeight / 4) {
+        this.styleObject.transform = `translateY(0px)`;
+      }
     },
   },
   mounted() {
@@ -37,26 +46,30 @@ const landingHero = createApp({
 
 landingHero.mount("#landingHero");
 
+// --------------------------------------- //
+
 const landingBody = createApp({
   data() {
     return {
       windowHeight: window.innerHeight,
+      aspectRatio: window.innerWidth / window.innerHeight,
       styleObject: {
         position: "absolute",
-        top: "0px",
+        height: "100%",
+        width: "100%",
         zIndex: -1,
         opacity: 0,
       },
+      footerHeight: window.innerHeight,
     };
   },
   methods: {
     handleScroll() {
-      console.log(window.scrollY);
-      console.log(this.windowHeight);
-      if (window.scrollY < this.windowHeight) {
-        this.styleObject.top = window.scrollY + "px";
+      if (window.scrollY < this.windowHeight / 4) {
+        this.styleObject.top = this.windowHeight / 4 + "px";
       }
-      this.styleObject.opacity = window.scrollY / this.windowHeight;
+      this.styleObject.opacity = (window.scrollY / this.windowHeight) * 3;
+      this.footerHeight = 80;
     },
   },
   mounted() {

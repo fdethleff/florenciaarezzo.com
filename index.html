@@ -33,8 +33,8 @@
         <h3 class="hero-subtitle">3DDesigner</h3>
         <p class="click-me" @click="playVideo">CLICK</p>
         <div class="navbar">
-          <div class="nav-item">About</div>
-          <div class="nav-item">Projects</div>
+          <div class="nav-item px-2">About</div>
+          <div class="nav-item px-2">Projects</div>
         </div>
         <video
           id="hero-video"
@@ -52,16 +52,76 @@
     <!-- Content -->
     <div id="landingBody">
       <div @scroll="handleScroll" :style="styleObject">
-        <div>
-          <img src="assets/images/landing-image.jpg" />
-        </div>
-        <div class="footer">
-          <p>FOOTER HERE</p>
+        <img src="assets/images/landing-image.jpg" />
+        <hr />
+        <div :style="{ 'height': footerHeight + 'px' }">
+          <div class="container">
+            <footer class="py-3 my-4">
+              <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-white footer-text">
+                    florencia.arezzo@base9.one
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-white">
+                    <img
+                      class="footer-icon"
+                      src="assets/icons/email.png"
+                      alt="email"
+                    />
+                  </a>
+                </li>
+                <li class="nav-item footer-divider px-3 mx-3">
+                  <img src="assets/icons/divider-vertical.png" alt="" />
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link px-2 text-white"
+                    ><img
+                      class="footer-icon"
+                      src="assets/icons/insta.png"
+                      alt="instagram"
+                  /></a>
+                </li>
+                <li class="nav-item footer-divider px-3 mx-3">
+                  <img src="assets/icons/divider-vertical.png" alt="" />
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link px-2 text-white"
+                    ><img
+                      class="footer-icon"
+                      src="assets/icons/linkedin.png"
+                      alt="linkedin"
+                  /></a>
+                </li>
+                <li class="nav-item footer-divider px-3 mx-3">
+                  <img src="assets/icons/divider-vertical.png" alt="" />
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link px-2 text-white"
+                    ><img
+                      class="footer-icon"
+                      src="assets/icons/whatsapp.png"
+                      alt="whatsapp"
+                  /></a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="#"
+                    class="nav-link text-white footer-text"
+                    style="padding-top: 10px"
+                  >
+                    +34 672 369 961
+                  </a>
+                </li>
+              </ul>
+            </footer>
+          </div>
         </div>
       </div>
     </div>
 
-    <!--  -->
+    <!-- Scripts -->
     <script src="app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
