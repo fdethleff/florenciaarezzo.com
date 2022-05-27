@@ -114,11 +114,6 @@ img {
 }
 
 @font-face {
-  font-family: "DolceVitaLight";
-  src: url("assets/fonts/DolceVitaLight.ttf");
-}
-
-@font-face {
   font-family: "DolceVita";
   src: url("assets/fonts/DolceVita.ttf");
 }
