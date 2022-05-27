@@ -79,9 +79,9 @@ img {
 
 .touch-me {
   position: absolute;
-  top: 65%;
-  left: 90%;
-  z-index: 2;
+  top: 68.5%;
+  left: 92%;
+  z-index: 3;
   animation: pulsateFinger 4s infinite;
   object-fit: contain;
 }
@@ -93,8 +93,8 @@ img {
   width: 5rem;
   height: 5rem;
   text-align: center;
-  top: 52%;
-  left: 90%;
+  top: 59%;
+  left: 88%;
   font-family: "DolceVitaHeavyBold";
   z-index: 2;
   letter-spacing: 0.2rem;
