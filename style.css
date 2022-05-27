@@ -83,6 +83,7 @@ img {
   left: 90%;
   z-index: 2;
   animation: pulsateFinger 4s infinite;
+  object-fit: contain;
 }
 
 .click-me {
