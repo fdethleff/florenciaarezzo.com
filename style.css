@@ -43,6 +43,7 @@ img {
 .nav-item {
   font-family: "DolceVita";
   color: #fff;
+  font-size: 1.2rem;
 }
 
 .hero-title {
@@ -73,6 +74,14 @@ img {
   letter-spacing: 1.3rem;
   color: #fff;
   font-size: 1.1rem;
+}
+
+.touch-me {
+  position: absolute;
+  top: 65%;
+  left: 90%;
+  z-index: 2;
+  animation: pulsate 4s infinite;
 }
 
 .click-me {
@@ -156,21 +165,21 @@ img {
 @keyframes pulsate {
   0% {
     opacity: 1;
-    width: 6rem;
-    height: 6rem;
-    line-height: 6rem;
+    width: 4rem;
+    height: 4rem;
+    /* line-height: 6rem; */
   }
   50% {
     opacity: 0.4;
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
+    width: 3rem;
+    height: 3rem;
+    /* line-height: 5rem; */
   }
   100% {
     opacity: 1;
-    width: 6rem;
-    height: 6rem;
-    line-height: 6rem;
+    width: 4rem;
+    height: 4rem;
+    /* line-height: 6rem; */
   }
 }
 
@@ -179,6 +188,6 @@ img {
   font-size: small;
 }
 
-.footer-divider {
-  height: 40px;
+.divider {
+  border-left: 1px solid #fff;
 }

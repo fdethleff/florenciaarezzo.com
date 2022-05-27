@@ -31,7 +31,13 @@
       <div @scroll="handleScroll" :style="styleObject">
         <h1 class="hero-title">FlorenciaArezzo</h1>
         <h3 class="hero-subtitle">3DDesigner</h3>
-        <p class="click-me" @click="playVideo">CLICK</p>
+        <!-- <p class="click-me" @click="playVideo">CLICK</p> -->
+        <img
+          src="assets/icons/finger.png"
+          class="touch-me"
+          alt=""
+          @click="playVideo"
+        />
         <div class="navbar">
           <div class="nav-item px-2">About</div>
           <div class="nav-item px-2">Projects</div>
@@ -45,6 +51,7 @@
           preload
         ></video>
         <div class="down-arrow"></div>
+        <div></div>
       </div>
     </div>
     <!--  -->
@@ -72,9 +79,7 @@
                     />
                   </a>
                 </li>
-                <li class="nav-item footer-divider px-3 mx-3">
-                  <img src="assets/icons/divider-vertical.png" alt="" />
-                </li>
+                <li class="divider mx-3"></li>
                 <li class="nav-item">
                   <a href="#" class="nav-link px-2 text-white"
                     ><img
@@ -83,9 +88,7 @@
                       alt="instagram"
                   /></a>
                 </li>
-                <li class="nav-item footer-divider px-3 mx-3">
-                  <img src="assets/icons/divider-vertical.png" alt="" />
-                </li>
+                <li class="divider mx-3"></li>
                 <li class="nav-item">
                   <a href="#" class="nav-link px-2 text-white"
                     ><img
@@ -94,9 +97,7 @@
                       alt="linkedin"
                   /></a>
                 </li>
-                <li class="nav-item footer-divider px-3 mx-3">
-                  <img src="assets/icons/divider-vertical.png" alt="" />
-                </li>
+                <li class="divider mx-3"></li>
                 <li class="nav-item">
                   <a href="#" class="nav-link px-2 text-white"
                     ><img
