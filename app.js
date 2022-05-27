@@ -4,18 +4,17 @@ const landingHero = createApp({
   data() {
     return {
       isPlaying: false,
-      devicePixelRatio: window.devicePixelRatio,
       styleObject: {
         position: "absolute",
-        top: "0px",
+        height: "100%",
+        width: "100%",
         transform: "translateY(0px)",
-        zIndex: 1,
       },
     };
   },
   methods: {
     playVideo() {
-      let video = document.getElementById("header-video");
+      let video = document.getElementById("hero-video");
       if (this.isPlaying == false) {
         video.play();
         this.isPlaying = true;
@@ -25,8 +24,7 @@ const landingHero = createApp({
       }
     },
     handleScroll() {
-      let translationY = (-window.scrollY / devicePixelRatio) * 2;
-      this.styleObject.transform = `translateY(${translationY}px)`;
+      this.styleObject.transform = `translateY(${-window.scrollY}px)`;
     },
   },
   mounted() {
@@ -43,7 +41,6 @@ const landingBody = createApp({
   data() {
     return {
       windowHeight: window.innerHeight,
-      devicePixelRatio: window.devicePixelRatio,
       styleObject: {
         position: "absolute",
         top: "0px",
@@ -56,11 +53,10 @@ const landingBody = createApp({
     handleScroll() {
       console.log(window.scrollY);
       console.log(this.windowHeight);
-      if (window.scrollY < this.windowHeight / devicePixelRatio) {
+      if (window.scrollY < this.windowHeight) {
         this.styleObject.top = window.scrollY + "px";
       }
-      this.styleObject.opacity =
-        (window.scrollY / this.windowHeight) * devicePixelRatio;
+      this.styleObject.opacity = window.scrollY / this.windowHeight;
     },
   },
   mounted() {
