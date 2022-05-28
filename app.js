@@ -5,8 +5,10 @@ const { createApp } = Vue;
 const landingHero = createApp({
   data() {
     return {
+      heroVideo: "walking-animation.m4v",
       isPlaying: false,
       windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
       styleObject: {
         position: "fixed",
         height: "100%",
@@ -38,6 +40,10 @@ const landingHero = createApp({
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    if (this.windowWidth < 768) {
+      console.log("mobile");
+      this.heroVideo = "walking-animation-mobile.mp4";
+    }
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
