@@ -29,7 +29,13 @@
     <!-- Hero -->
     <div id="landingHero">
       <div @scroll="handleScroll" :style="styleObject">
-        <h1 class="hero-title">FlorenciaArezzo</h1>
+        <div v-if="isMobileViewport === false">
+          <h1 class="hero-title">FlorenciaArezzo</h1>
+        </div>
+        <div v-if="isMobileViewport === true">
+          <h1 class="hero-title" style="letter-spacing: 0.9rem;">Mobile</h1>
+        </div>
+        
         <h3 class="hero-subtitle">3DDesigner</h3>
         <p class="click-me" @click="playVideo">CLICK</p>
         <div class="navbar">
@@ -51,70 +57,77 @@
     <!--  -->
 
     <!-- Content -->
+
     <div id="landingBody">
       <div @scroll="handleScroll" :style="styleObject">
         <img src="assets/images/landing-image.jpg" />
+        
+        <!-- Footer -->
+
         <hr />
         <div :style="{ 'height': footerHeight + 'px' }">
           <div class="container">
-            <footer class="py-3 my-4">
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-white footer-text">
-                    florencia.arezzo@base9.one
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link text-white">
+            <div class="row align-items-center justify-content-center py-3 my-4">
+              <div class="col-auto">
+                <a href="#" class="nav-link footer-text">
+                  florencia.arezzo@base9.one
+                </a>
+              </div>
+              <div class="col-auto">
+                <a href="#" class="nav-link text-white">
                     <img
                       class="footer-icon"
                       src="assets/icons/email.png"
                       alt="email"
                     />
                   </a>
-                </li>
-                <li class="divider mx-3"></li>
-                <li class="nav-item">
+              </div>
+              <div class="col-auto">
+                <div class="divider"></div>
+              </div>
+              <div class="col-auto">
                   <a href="#" class="nav-link px-2 text-white"
                     ><img
                       class="footer-icon"
                       src="assets/icons/insta.png"
                       alt="instagram"
                   /></a>
-                </li>
-                <li class="divider mx-3"></li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link px-2 text-white"
+              </div>
+              <div class="col-auto">
+                <div class="divider"></div>
+              </div>
+              <div class="col-auto">
+                <a href="#" class="nav-link px-2 text-white"
                     ><img
                       class="footer-icon"
                       src="assets/icons/linkedin.png"
                       alt="linkedin"
                   /></a>
-                </li>
-                <li class="divider mx-3"></li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link px-2 text-white"
+              </div>
+               <div class="col-auto">
+                <div class="divider"></div>
+              </div>
+              <div class="col-auto">
+                <a href="#" class="nav-link px-2 text-white"
                     ><img
                       class="footer-icon"
                       src="assets/icons/whatsapp.png"
                       alt="whatsapp"
                   /></a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link text-white footer-text"
-                    style="padding-top: 10px"
-                  >
-                    +34 672 369 961
-                  </a>
-                </li>
-              </ul>
-            </footer>
+              </div>
+                <div class="col-auto footer-text mt-2">
+                +34 672 369 961
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Footer -->
+
       </div>
     </div>
+
+    <!-- Content -->
 
     <!-- Scripts -->
     <script src="app.js"></script>

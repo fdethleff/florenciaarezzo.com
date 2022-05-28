@@ -93,8 +93,8 @@ img {
   width: 5rem;
   height: 5rem;
   text-align: center;
-  top: 59%;
-  left: 88%;
+  top: 65%;
+  left: calc(100% - 9rem);
   font-family: "DolceVitaHeavyBold";
   z-index: 2;
   letter-spacing: 0.2rem;
@@ -206,6 +206,7 @@ img {
 .footer-text {
   font-family: "RobotoRegular";
   font-size: small;
+  color: #fff;
 }
 
 .divider {

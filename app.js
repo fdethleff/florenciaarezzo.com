@@ -7,6 +7,7 @@ const landingHero = createApp({
     return {
       heroVideo: "walking-animation.m4v",
       isPlaying: false,
+      isMobileViewport: false,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       styleObject: {
@@ -37,16 +38,29 @@ const landingHero = createApp({
         this.styleObject.transform = `translateY(0px)`;
       }
     },
+    handleResize() {
+      this.windowHeight = window.innerHeight;
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth < 768) {
+        this.heroVideo = "walking-animation-mobile.mp4";
+        this.isMobileViewport = true;
+      } else {
+        this.heroVideo = "walking-animation.m4v";
+        this.isMobileViewport = false;
+      }
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.handleResize);
     if (this.windowWidth < 768) {
-      console.log("mobile");
       this.heroVideo = "walking-animation-mobile.mp4";
+      this.isMobileViewport = true;
     }
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleResize);
   },
 });
 
