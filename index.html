@@ -31,12 +31,13 @@
       <div @scroll="handleScroll" :style="styleObject">
         <div v-if="isMobileViewport === false">
           <h1 class="hero-title">FlorenciaArezzo</h1>
+          <h3 class="hero-subtitle">3DDesigner</h3>
         </div>
         <div v-if="isMobileViewport === true">
-          <h1 class="hero-title" style="letter-spacing: 0.7rem;">FlorenciaArezzo</h1>
+          <h1 class="hero-title" style="letter-spacing: 0.7rem; left: 45%;">FlorenciaArezzo</h1>
+          <h3 class="hero-subtitle" style="letter-spacing: 0.7rem; left: 45%;">3DDesigner</h3>
         </div>
         
-        <h3 class="hero-subtitle">3DDesigner</h3>
         <p class="click-me" @click="playVideo">CLICK</p>
         <div class="navbar">
           <div class="nav-item px-3">About</div>
