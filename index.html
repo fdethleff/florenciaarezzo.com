@@ -33,7 +33,7 @@
           <h1 class="hero-title">FlorenciaArezzo</h1>
         </div>
         <div v-if="isMobileViewport === true">
-          <h1 class="hero-title" style="letter-spacing: 0.9rem;">Mobile</h1>
+          <h1 class="hero-title" style="letter-spacing: 0.9rem;">FlorenciaArezzo</h1>
         </div>
         
         <h3 class="hero-subtitle">3DDesigner</h3>
@@ -44,11 +44,11 @@
         </div>
         <video
           id="hero-video"
-          :src=`assets/videos/${heroVideo}`
+          :src=`assets/videos/${heroVideo}#t=0.1`
           @click="playVideo"
           loop
           muted
-          preload
+          playsinline
         ></video>
         <div class="down-arrow"></div>
         <div></div>
