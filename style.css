@@ -109,7 +109,7 @@ img {
 .footer-icon {
   height: 1.2rem;
   width: auto;
-  margin: calc(2% + 15px);
+  margin: 3vw;
 }
 
 .footer-text {
