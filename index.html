@@ -1,144 +1,89 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
+  <script src="https://unpkg.com/vue@3"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>florenciaarezzo.com</title>
+</head>
 
-    <script src="https://unpkg.com/vue@3"></script>
+<body>
 
-    <title>florenciaarezzo.com</title>
-  </head>
 
-  <body>
-    <!-- Hero -->
-    <div id="landingHero">
-      <div @scroll="handleScroll" :style="styleObject">
-        <div v-if="isMobileViewport === false">
-          <h1 class="hero-title">FlorenciaArezzo</h1>
-          <h3 class="hero-subtitle">3DDesigner</h3>
-        </div>
-        <div v-if="isMobileViewport === true">
-          <h1 class="hero-title" style="letter-spacing: 0.5rem;">FlorenciaArezzo</h1>
-          <h3 class="hero-subtitle" style="letter-spacing: 0.5rem;">3DDesigner</h3>
-        </div>
-        
-        <p class="click-me" @click="playVideo">CLICK</p>
-        <div class="navbar">
-          <div class="nav-item px-3">About</div>
-          <div class="nav-item px-3">Projects</div>
-        </div>
-        <video
-          id="hero-video"
-          poster="assets/images/hero-video-poster.png"
-          :src=`assets/videos/${heroVideo}`
-          @click="playVideo"
-          loop
-          muted
-          playsinline
-          preload="auto"
-        ></video>
-        <div class="down-arrow"></div>
-        <div></div>
+  <!-- Hero -->
+  <div id="hero">
+    <div @scroll="handleScroll" :style="styleObject">
+      <nav class="navbar">
+        <a class="nav-link nav-item mx-2" href="pages/about.html">About</a>
+        <a class="nav-link nav-item mx-2" href="pages/projects.html">Projects</a>
+      </nav>
+      <div v-if="isMobileViewport === false">
+        <h1 class="hero-title">FlorenciaArezzo</h1>
+        <h3 class="hero-subtitle">3DDesigner</h3>
       </div>
-    </div>
-    <!--  -->
-
-    <!-- Content -->
-
-    <div id="landingBody">
-      <div @scroll="handleScroll" :style="styleObject">
-        <img src="assets/images/landing-image.jpg" />
-        
-        <!-- Footer -->
-
-        <hr />
-        <div :style="{ 'height': footerHeight + 'px' }">
-          <div class="container">
-            <div class="row align-items-center justify-content-center py-3 my-4">
-              <div class="col-auto mt-2">
-                <a href="#" class="nav-link footer-text">
-                  florencia.arezzo@base9.one
-                </a>
-              </div>
-              <div class="col-auto mt-2">
-                <a href="#" class="nav-link text-white">
-                    <img
-                      class="footer-icon"
-                      src="assets/icons/email.png"
-                      alt="email"
-                    />
-                  </a>
-              </div>
-              <div class="col-auto mt-2">
-                <div class="divider"></div>
-              </div>
-              <div class="col-auto mt-2">
-                  <a href="#" class="nav-link px-2 text-white"
-                    ><img
-                      class="footer-icon"
-                      src="assets/icons/insta.png"
-                      alt="instagram"
-                  /></a>
-              </div>
-             <div class="col-auto mt-2">
-                <div class="divider"></div>
-              </div>
-              <div class="col-auto mt-2">
-                <a href="#" class="nav-link px-2 text-white"
-                    ><img
-                      class="footer-icon"
-                      src="assets/icons/linkedin.png"
-                      alt="linkedin"
-                  /></a>
-              </div>
-               <div class="col-auto mt-2">
-                <div class="divider"></div>
-              </div>
-              <div class="col-auto mt-2">
-                <a href="#" class="nav-link px-2 text-white"
-                    ><img
-                      class="footer-icon"
-                      src="assets/icons/whatsapp.png"
-                      alt="whatsapp"
-                  /></a>
-              </div>
-                <div class="col-auto nav-link footer-text mt-3">
-                +34 672 369 961
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer -->
-
+      <div v-if="isMobileViewport === true">
+        <h1 class="hero-title" style="letter-spacing: 0.5rem">
+          FlorenciaArezzo
+        </h1>
+        <h3 class="hero-subtitle" style="letter-spacing: 0.5rem">3DDesigner</h3>
       </div>
+      <video id="hero-video" :src="'assets/videos/' + heroVideo" poster="assets/images/hero-video-poster.png"
+        @click="playVideo" loop muted playsinline preload="auto"></video>
+      <p class="click-me" @click="playVideo">CLICK</p>
+      <div class="down-arrow"></div>
     </div>
+  </div>
 
-    <!-- Content -->
 
-    <!-- Scripts -->
-    <script src="app.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <!--  -->
-  </body>
+  <!-- Content -->
+  <div id="landing">
+    <div @scroll="handleScroll" :style="styleObject">
+      <img src="assets/images/landing-image.jpg" />
+      <img src="assets/images/Shirt_close up.jpg" />
+
+      <!-- Footer -->
+      <div id="footer">
+        <footer class="d-flex flex-wrap align-items-center justify-content-center p-4 border-top">
+          <div class="footer-text">florencia.arezzo@base9.one</div>
+          <a href="#">
+            <img src="assets/icons/email.png" alt="" class="footer-icon">
+          </a>
+          <img src="assets/icons/divider-vertical.png" alt="" class="footer-icon">
+          <a href="#">
+            <img src="assets/icons/insta.png" alt="" class="footer-icon">
+          </a>
+          <img src="assets/icons/divider-vertical.png" alt="" class="footer-icon">
+          <a href="#">
+            <img src="assets/icons/linkedin.png" alt="" class="footer-icon">
+          </a>
+          <img src="assets/icons/divider-vertical.png" alt="" class="footer-icon">
+          <a href="#">
+            <img src="assets/icons/whatsapp.png" alt="" class="footer-icon">
+          </a>
+          <div class="footer-text">+34 672 369 961</div>
+        </footer>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="scripts/hero.js"></script>
+  <script src="scripts/landing.js"></script>
+  <script src="scripts/footer.js"></script>
+
+
+</body>
+
+
 </html>

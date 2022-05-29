@@ -107,8 +107,19 @@ img {
 }
 
 .footer-icon {
-  height: 1rem;
+  height: 1.2rem;
   width: auto;
+  margin: calc(2% + 15px);
+}
+
+.footer-text {
+  font-family: "RobotoRegular";
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.divider {
+  border-left: 1px solid #fff;
 }
 
 @font-face {
@@ -203,12 +214,4 @@ img {
   }
 }
 
-.footer-text {
-  font-family: "RobotoRegular";
-  font-size: small;
-  color: #fff;
-}
 
-.divider {
-  border-left: 1px solid #fff;
-}

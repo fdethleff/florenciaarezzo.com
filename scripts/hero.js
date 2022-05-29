@@ -1,8 +1,4 @@
-const { createApp } = Vue;
-
-// --------------------------------------- //
-
-const landingHero = createApp({
+const hero = Vue.createApp({
   data() {
     return {
       heroVideo: "walking-animation.m4v",
@@ -64,40 +60,4 @@ const landingHero = createApp({
   },
 });
 
-landingHero.mount("#landingHero");
-
-// --------------------------------------- //
-
-const landingBody = createApp({
-  data() {
-    return {
-      windowHeight: window.innerHeight,
-      aspectRatio: window.innerWidth / window.innerHeight,
-      styleObject: {
-        position: "absolute",
-        height: "100%",
-        width: "100%",
-        zIndex: -1,
-        opacity: 0,
-      },
-      footerHeight: window.innerHeight,
-    };
-  },
-  methods: {
-    handleScroll() {
-      if (window.scrollY < this.windowHeight / 4) {
-        this.styleObject.top = this.windowHeight / 4 + "px";
-      }
-      this.styleObject.opacity = (window.scrollY / this.windowHeight) * 3;
-      this.footerHeight = 80;
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  unmounted() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-});
-
-landingBody.mount("#landingBody");
+hero.mount("#hero");
