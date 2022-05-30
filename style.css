@@ -1,129 +1,5 @@
-body {
-  background-color: black;
-  margin: 0;
-  left: 0;
-  padding: 0;
-}
-
-hr {
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-video {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-img {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.img-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.navbar {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  z-index: 2;
-  left: 2%;
-  top: 2%;
-}
-
-.nav-item {
-  font-family: "DolceVitaHeavyBold";
-  color: #fff;
-  font-size: 1.1rem;
-  letter-spacing: 0.1rem;
-}
-
-.hero-title {
-  position: absolute;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  font-family: "DolceVitaHeavyBold";
-  z-index: 2;
-  letter-spacing: 2.9rem;
-  color: #fff;
-  font-size: 1.7rem;
-}
-
-.hero-subtitle {
-  position: absolute;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  text-align: center;
-  top: 54%;
-  left: 50%;
-  font-family: "DolceVitaHeavyBold";
-  z-index: 2;
-  letter-spacing: 1.3rem;
-  color: #fff;
-  font-size: 1.1rem;
-}
-
-.touch-me {
-  position: absolute;
-  top: 68.5%;
-  left: 92%;
-  z-index: 3;
-  animation: pulsateFinger 4s infinite;
-  object-fit: contain;
-}
-
-.click-me {
-  position: absolute;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  width: 5rem;
-  height: 5rem;
-  text-align: center;
-  top: 65%;
-  left: calc(100% - 9rem);
-  font-family: "DolceVitaHeavyBold";
-  z-index: 2;
-  letter-spacing: 0.2rem;
-  color: #fff;
-  font-size: 0.8rem;
-  border: #fff solid 3px;
-  border-radius: 5rem;
-  animation: pulsate 4s infinite;
-  transform: rotate(-20deg);
-}
-
-.footer-icon {
-  height: 1.2rem;
-  width: auto;
-  margin: 3vw;
-}
-
-.footer-text {
-  font-family: "RobotoRegular";
-  font-size: 0.8rem;
-  color: #fff;
-}
-
-.divider {
-  border-left: 1px solid #fff;
-}
-
 @font-face {
-  font-family: "DolceVitaHeavyBold";
+  font-family: "DolceVitaBold";
   src: url("assets/fonts/DolceVitaHeavyBold.ttf");
 }
 
@@ -140,6 +16,42 @@ img {
 @font-face {
   font-family: "RobotoRegular";
   src: url("assets/fonts/Roboto-Regular.ttf");
+}
+
+.click-me {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: calc(100% - 9rem);
+  font-family: "DolceVitaHeavyBold";
+  z-index: 1;
+  color: #fff;
+  font-size: 0.8rem;
+  border: #fff solid 4px;
+  border-radius: 5rem;
+  animation: pulsate 4s infinite;
+  transform: rotate(20deg);
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    width: 6rem;
+    height: 6rem;
+    line-height: 6rem;
+  }
+  50% {
+    opacity: 0.4;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+  }
+  100% {
+    opacity: 1;
+    width: 6rem;
+    height: 6rem;
+    line-height: 6rem;
+  }
 }
 
 .down-arrow {
@@ -174,44 +86,3 @@ img {
     margin-top: 0;
   }
 }
-
-@keyframes pulsate {
-  0% {
-    opacity: 1;
-    width: 6rem;
-    height: 6rem;
-    line-height: 6rem;
-  }
-  50% {
-    opacity: 0.4;
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
-  }
-  100% {
-    opacity: 1;
-    width: 6rem;
-    height: 6rem;
-    line-height: 6rem;
-  }
-}
-
-@keyframes pulsateFinger {
-  0% {
-    opacity: 1;
-    width: 4rem;
-    height: 4rem;
-  }
-  50% {
-    opacity: 0.4;
-    width: 3rem;
-    height: 3rem;
-  }
-  100% {
-    opacity: 1;
-    width: 4rem;
-    height: 4rem;
-  }
-}
-
-
