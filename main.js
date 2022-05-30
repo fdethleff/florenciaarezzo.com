@@ -33,7 +33,7 @@ createApp({
             this.windowWidth = window.innerWidth;
             console.log(this.windowWidth);
             if (this.windowWidth < 768) {
-                this.letterSpacing = '1rem';
+                this.letterSpacing = '0.8rem';
                 this.heroVideo = "walking-animation-mobile.mp4";
             } else {
                 this.letterSpacing = '2rem';
@@ -45,7 +45,7 @@ createApp({
         window.addEventListener('scroll', this.handleScroll)
         window.addEventListener('resize', this.handleResize)
         if (this.windowWidth < 768) {
-            this.letterSpacing = '1rem';
+            this.letterSpacing = '0.8rem';
             this.heroVideo = "walking-animation-mobile.mp4";
         }
     },
