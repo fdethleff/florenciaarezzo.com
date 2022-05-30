@@ -9,6 +9,7 @@ createApp({
             translateY: 'translateY(0)',
             letterSpacing: '2rem',
             heroVideo: "walking-animation.m4v",
+            contentOpacity: 0,
         }
     },
     methods: {
@@ -25,8 +26,10 @@ createApp({
         handleScroll() {
             if (window.scrollY > 50) {
                 this.translateY = `translateY(-${this.windowHeight}px)`;
+                this.contentOpacity = 1;
             } else {
                 this.translateY = 'translateY(0)';
+                this.contentOpacity = 0;
             }
         },
         handleResize() {
