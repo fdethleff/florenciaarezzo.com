@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAYAAACMGIOFAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIOSURBVHgB5ZuBcdowFIY/MgEb1J0gjKAROoI3SDYJnaDtBLQTiA2ACUwnCBu4ekG+oySOjWyhZ/m7+84xuYT3R5Fk2WJBHAqnca6cX/xx6W04OY/+eHBunXv/mlqMc+2snPUA5ed/cP7DqKF0WoYFa3Pnf38yDMNb7ZbWLbkjBfFarsuNf/+oPDlfgTqh8v7PROIFqBX5wojIsG+BWqEb/p+WggPugVqxOwYG3QD1BLQEoq0PdnlzH30CUhcdYu9RtyD9NBHqKz3n0an0wzYtHZSkL3IMzScZ73YtGtuqLWCpqMgxLD8KuVNabKj2OuBKcbFDNBLuwYeMdlWfmG+XJxXTaqG+VhJuwXnyfDvJlK/y76rqhlEEjIQ05M1KQj6SN4WEHLyyVs6jhCzIm6WMrjWZ88AMmE3IE3lzmkPIo4Q8kDdvLXkkbw4Sck/ebGexCmm+kJDa14bB68lmnvxDnmwvTwzTaqG+vlsrW8XFhrhrgl1e1v0iL763faNiWq3VZsUnGCVFDrWkA6ugyCFu6EHBDJ5PCs+QvOAQb34SsAZSF32LawKxQD0Be/XDNuR2pfZHentG2rCkdR+BZeT7xtr6aHAf7EJGr6x3STYUzt9AnUDLne/4l9x357IhISXxRmBL4j3o18gC9SfjfJpABhXDSCyIQ8E5tOH8/HPpX7v+XIgo89xff9wS4RbpP4plEV0JgLXOAAAAAElFTkSuQmCC" />
+  <script src="https://unpkg.com/vue@3"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
+  <title>florenciaarezzo.com</title>
+  <link rel="stylesheet" href="/assets/index.8082eab2.css">
+</head>
+
+<body class="bg-black" style="margin: 0;">
+
+  <div id="main">
+
+    <!-- HERO -->
+
+    <div class="position-absolute" style="z-index: 1; transition: ease-in-out 1s" :style="{transform: translateY}">
+
+      <div class="position-relative">
+        <video id="hero-video" class="vw-100 vh-100" style="object-fit: cover" :src="'assets/videos/' + heroVideo"
+          poster="/assets/hero-video-poster.6820d58e.png" @click="playVideo" loop muted playsinline preload="auto"></video>
+      </div>
+
+      <div class="navbar position-absolute top-0 start-0 m-4">
+        <div class="row row-cols-auto text-white fs-5" style="font-family: 'DolceVitaBold'">
+          <a class="col-6 nav-link mx-2" href="pages/about.html">About</a>
+          <a class="col-6 nav-link mx-2" href="pages/projects.html">Projects</a>
+        </div>
+      </div>
+
+      <div class="position-absolute top-50 start-50 translate-middle text-white text-center"
+        style="font-family: 'DolceVitaBold';" :style="{letterSpacing: letterSpacing}">
+        <div class="col fs-1">FlorenciaArezzo</div>
+        <div class="col fs-5">3DDesigner</div>
+      </div>
+
+      <div class="click-me" style="font-family: 'RobotoBold'" @click="playVideo">CLICK</div>
+      <div class="down-arrow"></div>
+
+    </div>
+
+    <!-- HERO END -->
+
+    <!-- CONTENT -->
+
+    <div class="position-absolute" style="transition: ease-in-out 1s;" :style="{opacity: contentOpacity}">
+
+      <!-- SWEATER IMAGE -->
+
+      <img class="position-static vw-100 vh-100" style="object-fit: cover" src="/assets/landing-image.12b4ece0.jpg" alt="">
+
+      <div class="position-absolute start-50 translate-middle text-white text-center"
+        style="top: 45vh; font-family: 'RobotoBold'; letter-spacing: 0.4rem;">
+        <div class="col fs-6">base9.one</div>
+      </div>
+
+      <!-- SWEATER IMAGE END -->
+
+      <!-- FOOTER -->
+
+      <div class="container my-4">
+        <div class="row align-items-center justify-content-center text-center">
+
+          <div class="col-12 col-md-3 my-1">
+            <div class="text-white" style="font-family: 'Roboto'">florencia.arezzo@base9.one</div>
+          </div>
+
+          <div class="col-12 col-md-1">
+            <img class="my-2" src="/assets/insta.0213cc3c.png" style="height: 1rem;" alt="">
+          </div>
+
+          <div class="col-12 col-md-1 my-1">
+            <img class="my-2" src="/assets/linkedin.4d257147.png" style="height: 1rem;" alt="">
+          </div>
+
+          <div class="col-12 col-md-3 my-1">
+            <div class="text-white" style="font-family: 'Roboto'">+34 672 369 961</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FOOTER END -->
+
+    </div>
+
+    <!-- CONTENT END -->
+
+  </div>
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
