@@ -9,48 +9,152 @@
 }
 
 @font-face {
-  font-family: "RobotoBold";
-  src: url("assets/fonts/Roboto-Bold.ttf");
+  font-family: "MyriadPro";
+  src: url("assets/fonts/MYRIADPRO-REGULAR.OTF");
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("assets/fonts/Roboto-Regular.ttf");
+.margin-0 {
+  margin: 0;
+}
+
+.margin-3 {
+  margin: 3rem;
+}
+
+.margin-x-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.margin-x-2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.dolcevitabold {
+  font-family: "DolceVitaBold";
+}
+
+.myriadpro {
+  font-family: "MyriadPro";
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.top-65 {
+  top: 65%;
+}
+
+.right-10 {
+  right: 10%;
+}
+
+.color-white {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.rotate-minus-20 {
+  transform: rotate(-20deg);
+}
+
+.font-size-20 {
+  font-size: 2rem;
+}
+
+.font-size-10 {
+  font-size: 1rem;
+}
+
+.font-size-08 {
+  font-size: 0.8rem;
+}
+
+.font-size-05 {
+  font-size: 0.5rem;
+}
+
+.letter-spacing-20 {
+  letter-spacing: 2rem;
+}
+
+.letter-spacing-16 {
+  letter-spacing: 1.6rem;
+}
+
+.letter-spacing-10 {
+  letter-spacing: 1rem;
+}
+
+.letter-spacing-01 {
+  letter-spacing: 0.1rem;
+}
+
+.margin-top-10 {
+  margin-top: 1rem;
 }
 
 .click-me {
   position: absolute;
-  text-align: center;
-  top: 65%;
-  left: calc(100% - 9rem);
-  font-family: "DolceVitaHeavyBold";
+  top: 63.5%;
+  right: 9.6%;
   z-index: 1;
   color: #fff;
   font-size: 0.8rem;
   border: #fff solid 4px;
   border-radius: 5rem;
   animation: pulsate 4s infinite;
-  transform: rotate(20deg);
+  height: 4rem;
+  width: 4rem;
 }
 
 @keyframes pulsate {
   0% {
     opacity: 1;
-    width: 6rem;
-    height: 6rem;
-    line-height: 6rem;
   }
   50% {
     opacity: 0.4;
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
+    transform: scale(2);
   }
   100% {
     opacity: 1;
-    width: 6rem;
-    height: 6rem;
-    line-height: 6rem;
   }
 }
 

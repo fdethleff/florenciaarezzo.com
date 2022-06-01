@@ -23,6 +23,9 @@ createApp({
         this.isPlaying = false;
       }
     },
+    goToProjects() {
+      console.log("go to projects");
+    },
     handleScroll() {
       if (window.scrollY > 50) {
         this.translateY = `translateY(-${this.windowHeight}px)`;
