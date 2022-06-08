@@ -1,16 +1,14 @@
-const { createApp } = Vue
+const { createApp } = Vue;
 
 createApp({
-
   data() {
     return {
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
-      translateY: 'translateY(0)',
-      letterSpacing: '2rem',
+      translateY: "translateY(0)",
       heroVideo: "walking-animation.m4v",
       contentOpacity: 0,
-    }
+    };
   },
   methods: {
     playVideo() {
@@ -23,41 +21,33 @@ createApp({
         this.isPlaying = false;
       }
     },
-    goToProjects() {
-      console.log("go to projects");
-    },
     handleScroll() {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 100) {
         this.translateY = `translateY(-${this.windowHeight}px)`;
         this.contentOpacity = 1;
       } else {
-        this.translateY = 'translateY(0)';
+        this.translateY = "translateY(0)";
         this.contentOpacity = 0;
       }
     },
     handleResize() {
       this.windowWidth = window.innerWidth;
-      console.log(this.windowWidth);
       if (this.windowWidth < 768) {
-        this.letterSpacing = '0.1rem';
         this.heroVideo = "walking-animation-mobile.mp4";
       } else {
-        this.letterSpacing = '2rem';
         this.heroVideo = "walking-animation.m4v";
       }
     },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-    window.addEventListener('resize', this.handleResize)
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.handleResize);
     if (this.windowWidth < 768) {
-      this.letterSpacing = '0.1rem';
       this.heroVideo = "walking-animation-mobile.mp4";
     }
   },
   unmounted() {
-    window.removeEventListener('scroll', this.handleScroll)
-    window.removeEventListener('resize', this.handleResize)
-  }
-
-}).mount('#main')
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleResize);
+  },
+}).mount("#main");

@@ -75,8 +75,16 @@
   z-index: 1;
 }
 
+.top-50 {
+  top: 50%;
+}
+
 .top-65 {
   top: 65%;
+}
+
+.left-50 {
+  left: 50%;
 }
 
 .right-10 {
@@ -85,10 +93,6 @@
 
 .color-white {
   color: white;
-}
-
-.text-center {
-  text-align: center;
 }
 
 .rotate-minus-20 {
@@ -121,6 +125,10 @@
 
 .letter-spacing-10 {
   letter-spacing: 1rem;
+}
+
+.letter-spacing-5 {
+  letter-spacing: 0.5rem;
 }
 
 .letter-spacing-01 {
