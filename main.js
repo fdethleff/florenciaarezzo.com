@@ -9,7 +9,7 @@ window.addEventListener("scroll", function () {
     hero.style.transform = "translateY(0)";
     blackout.style.opacity = 1;
   }
-  if (window.scrollY > 100) {
+  if (window.scrollY > 200) {
     content.style.position = "absolute";
   } else {
     content.style.position = "fixed";
