@@ -1,53 +1,55 @@
-const { createApp } = Vue;
+window.addEventListener("scroll", function () {
+  let hero = document.getElementById("hero");
+  let blackout = document.getElementById("blackout");
+  let content = document.getElementById("content");
+  if (window.scrollY > 50) {
+    hero.style.transform = `translateY(-${window.innerHeight}px)`;
+    blackout.style.opacity = 0;
+  } else {
+    hero.style.transform = "translateY(0)";
+    blackout.style.opacity = 1;
+  }
+  if (window.scrollY > 100) {
+    content.style.position = "absolute";
+  } else {
+    content.style.position = "fixed";
+  }
+});
 
-createApp({
-  data() {
-    return {
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth,
-      translateY: "translateY(0)",
-      heroVideo: "walking-animation.m4v",
-      contentOpacity: 0,
-    };
-  },
-  methods: {
-    playVideo() {
-      let video = document.getElementById("hero-video");
-      if (this.isPlaying == false) {
-        video.play();
-        this.isPlaying = true;
-      } else {
-        video.pause();
-        this.isPlaying = false;
-      }
-    },
-    handleScroll() {
-      if (window.scrollY > 100) {
-        this.translateY = `translateY(-${this.windowHeight}px)`;
-        this.contentOpacity = 1;
-      } else {
-        this.translateY = "translateY(0)";
-        this.contentOpacity = 0;
-      }
-    },
-    handleResize() {
-      this.windowWidth = window.innerWidth;
-      if (this.windowWidth < 768) {
-        this.heroVideo = "walking-animation-mobile.mp4";
-      } else {
-        this.heroVideo = "walking-animation.m4v";
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("resize", this.handleResize);
-    if (this.windowWidth < 768) {
-      this.heroVideo = "walking-animation-mobile.mp4";
-    }
-  },
-  unmounted() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleResize);
-  },
-}).mount("#main");
+window.onload = function () {
+  let heroVideoDirectory = "assets/videos/";
+  let heroVideo = document.getElementById("hero-video");
+  let blackout = document.getElementById("blackout");
+
+  blackout.style.height = `${window.innerHeight * 2.1}px`;
+
+  if (window.innerWidth < 768) {
+    heroVideo.setAttribute(
+      "src",
+      heroVideoDirectory + "walking-animation-mobile.mp4"
+    );
+  } else {
+    heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
+  }
+};
+
+window.addEventListener("resize", function () {
+  let heroVideo = document.getElementById("hero-video");
+  if (window.innerWidth < 768) {
+    heroVideo.setAttribute(
+      "src",
+      heroVideoDirectory + "walking-animation-mobile.mp4"
+    );
+  } else {
+    heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
+  }
+});
+
+document.getElementById("clickMe").addEventListener("click", function () {
+  let heroVideo = document.getElementById("hero-video");
+  if (heroVideo.paused) {
+    heroVideo.play();
+  } else {
+    heroVideo.pause();
+  }
+});
