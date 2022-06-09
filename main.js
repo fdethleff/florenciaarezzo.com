@@ -10,9 +10,8 @@ window.addEventListener("scroll", function () {
     blackout.style.opacity = 1;
   }
   if (window.scrollY > 200) {
-    content.style.position = "absolute";
-  } else {
-    content.style.position = "fixed";
+    let scrollY = Math.min(200, window.scrollY);
+    content.style.top = ` ${scrollY}px`;
   }
 });
 
@@ -21,7 +20,7 @@ window.onload = function () {
   let heroVideo = document.getElementById("hero-video");
   let blackout = document.getElementById("blackout");
 
-  blackout.style.height = `${window.innerHeight * 2.1}px`;
+  blackout.style.height = `${window.innerHeight * 2.25}px`;
 
   if (window.innerWidth < 768) {
     heroVideo.setAttribute(
