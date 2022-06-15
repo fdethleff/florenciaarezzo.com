@@ -1,8 +1,7 @@
 import * as THREE from "three";
 
-const SEPARATION = 100,
-  AMOUNTX = 50,
-  AMOUNTY = 50;
+const AMOUNTX = 500,
+  AMOUNTY = 500;
 
 let container;
 let camera, scene, renderer;
@@ -21,12 +20,12 @@ animate();
 
 function init() {
   camera = new THREE.PerspectiveCamera(
-    50,
+    30,
     window.innerWidth / window.innerHeight,
     1,
-    3000
+    2000
   );
-  camera.position.z = 3000;
+  camera.position.z = 1000;
 
   scene = new THREE.Scene();
 
@@ -40,9 +39,9 @@ function init() {
 
   for (let ix = 0; ix < AMOUNTX; ix++) {
     for (let iy = 0; iy < AMOUNTY; iy++) {
-      positions[i] = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2; // x
+      positions[i] = ix * Math.random() - AMOUNTX * Math.random() * 100; // x
       positions[i + 1] = 0; // y
-      positions[i + 2] = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2; // z
+      positions[i + 2] = iy * Math.random() * 100 - AMOUNTY * Math.random(); // z
       scales[j] = 1;
       i += 3;
       j++;
@@ -64,11 +63,17 @@ function init() {
   particles = new THREE.Points(geometry, material);
   scene.add(particles);
 
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   container = document.getElementById("webgl");
   container.appendChild(renderer.domElement);
+
+  var bgTexture = new THREE.TextureLoader().load(
+    "assets/images/NFTPROJECTS022000x2000.jpg"
+  );
+  bgTexture.minFilter = THREE.LinearFilter;
+  scene.background = bgTexture;
 
   container.style.touchAction = "none";
   container.addEventListener("pointermove", onPointerMove);
@@ -77,7 +82,6 @@ function init() {
 
 function onPointerMove(event) {
   if (event.isPrimary === false) return;
-
   mouseX = event.clientX - windowHalfX;
   mouseY = event.clientY - windowHalfY;
 }
@@ -112,8 +116,7 @@ function render() {
         Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
 
       scales[j] =
-        (Math.sin((ix + count) * 0.3) + 1) * 20 +
-        (Math.sin((iy + count) * 0.5) + 1) * 20;
+        (Math.sin(iy + count) + 1) * 10 + (Math.cos(iy + count) + 1) * 10;
 
       i += 3;
       j++;
@@ -125,5 +128,5 @@ function render() {
 
   renderer.render(scene, camera);
 
-  count += 0.05;
+  count += 0.005;
 }

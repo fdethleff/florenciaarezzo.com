@@ -32,6 +32,7 @@ window.addEventListener("scroll", function () {
 
 window.addEventListener("resize", function () {
   let heroVideo = document.getElementById("hero-video");
+  let heroVideoDirectory = "assets/videos/";
   if (window.innerWidth < 768) {
     heroVideo.setAttribute(
       "src",
