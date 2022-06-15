@@ -75,15 +75,7 @@ function init() {
   bgTexture.minFilter = THREE.LinearFilter;
   scene.background = bgTexture;
 
-  container.style.touchAction = "none";
-  container.addEventListener("pointermove", onPointerMove);
   window.addEventListener("resize", onWindowResize);
-}
-
-function onPointerMove(event) {
-  if (event.isPrimary === false) return;
-  mouseX = event.clientX - windowHalfX;
-  mouseY = event.clientY - windowHalfY;
 }
 
 function onWindowResize() {
@@ -100,8 +92,8 @@ function animate() {
 }
 
 function render() {
-  camera.position.x += (mouseX - camera.position.x) * 0.05;
-  camera.position.y += (-mouseY - camera.position.y) * 0.05;
+  camera.position.x += (mouseX - camera.position.x) * 0.1;
+  camera.position.y += (-mouseY - camera.position.y) * 0.1;
   camera.lookAt(scene.position);
 
   const positions = particles.geometry.attributes.position.array;
@@ -116,7 +108,7 @@ function render() {
         Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
 
       scales[j] =
-        (Math.sin(iy + count) + 1) * 10 + (Math.cos(iy + count) + 1) * 10;
+        (Math.sin(iy + count) + 1) * 5 + (Math.cos(iy + count) + 1) * 5;
 
       i += 3;
       j++;
