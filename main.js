@@ -1,18 +1,3 @@
-window.addEventListener("scroll", function () {
-  let hero = document.getElementById("hero");
-  let blackout = document.getElementById("blackout");
-  let content = document.getElementById("content");
-  if (window.scrollY > 10) {
-    hero.style.transform = `translateY(-${window.innerHeight}px)`;
-    blackout.style.opacity = 0;
-    let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
-    content.style.top = `${dynamicTopValue}px`;
-  } else {
-    hero.style.transform = "translateY(0)";
-    blackout.style.opacity = 1;
-  }
-});
-
 window.onload = function () {
   let heroVideoDirectory = "assets/videos/";
   let heroVideo = document.getElementById("hero-video");
@@ -29,6 +14,21 @@ window.onload = function () {
     heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
   }
 };
+
+window.addEventListener("scroll", function () {
+  let hero = document.getElementById("hero");
+  let blackout = document.getElementById("blackout");
+  let content = document.getElementById("content");
+  if (window.scrollY > 10) {
+    hero.style.transform = `translateY(-${window.innerHeight}px)`;
+    blackout.style.opacity = 0;
+    let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
+    content.style.top = `${dynamicTopValue}px`;
+  } else {
+    hero.style.transform = "translateY(0)";
+    blackout.style.opacity = 1;
+  }
+});
 
 window.addEventListener("resize", function () {
   let heroVideo = document.getElementById("hero-video");
