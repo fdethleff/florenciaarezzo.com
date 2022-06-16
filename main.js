@@ -51,3 +51,12 @@ document.getElementById("clickMe").addEventListener("click", function () {
     heroVideo.pause();
   }
 });
+
+document
+  .getElementById("projectsHeaderLink")
+  .addEventListener("click", function () {
+    hero.style.transform = `translateY(-${window.innerHeight}px)`;
+    blackout.style.opacity = 0;
+    let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
+    content.style.top = `${dynamicTopValue}px`;
+  });
