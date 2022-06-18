@@ -1,6 +1,6 @@
 setTimeout(function () {
   document.getElementById("loader").classList.add("hidden");
-}, 3000);
+}, 2000);
 
 window.onload = function () {
   let heroVideoDirectory = "assets/videos/";
