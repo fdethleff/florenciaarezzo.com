@@ -1,3 +1,7 @@
+setTimeout(function () {
+  document.getElementById("loader").classList.add("hidden");
+}, 3000);
+
 window.onload = function () {
   let heroVideoDirectory = "assets/videos/";
   let heroVideo = document.getElementById("hero-video");
@@ -13,10 +17,6 @@ window.onload = function () {
   } else {
     heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
   }
-
-  setTimeout(function () {
-    document.getElementById("loader").classList.add("hidden");
-  }, 2000);
 };
 
 window.addEventListener("scroll", function () {
