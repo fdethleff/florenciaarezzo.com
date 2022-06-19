@@ -12,9 +12,6 @@ let particles,
 let mouseX = 0,
   mouseY = 0;
 
-let windowHalfX = window.innerWidth / 2;
-let windowHalfY = window.innerHeight / 2;
-
 init();
 animate();
 
@@ -106,7 +103,6 @@ function render() {
     for (let iy = 0; iy < AMOUNTY; iy++) {
       positions[i + 1] =
         Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
-
       scales[j] =
         (Math.sin(iy + count) + 1) * 5 + (Math.cos(iy + count) + 1) * 5;
 
