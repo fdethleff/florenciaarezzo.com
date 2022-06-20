@@ -31,6 +31,8 @@ function init() {
   const positions = new Float32Array(numParticles * 3);
   const scales = new Float32Array(numParticles);
 
+  let windowHalfX, windowHalfY;
+
   let i = 0,
     j = 0;
 
