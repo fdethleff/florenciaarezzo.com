@@ -63,6 +63,7 @@ document
   .addEventListener("click", function () {
     hero.style.transform = `translateY(-${window.innerHeight}px)`;
     blackout.style.opacity = 0;
+    blackout.classList.remove("z-10");
     let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
     content.style.top = `${dynamicTopValue}px`;
   });
