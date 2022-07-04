@@ -1,154 +1,256 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./style.css" />
-
-  <script async src="https://unpkg.com/es-module-shims@1.5.6/dist/es-module-shims.js"></script>
-  <script type="importmap">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.5.6/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
       {
         "imports": {
           "three": "https://unpkg.com/three@latest/build/three.module.js"
         }
       }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
-  <title>florenciaarezzo.com</title>
-</head>
+    <link rel="stylesheet" href="./style.css" />
 
-<body class="bg-black overflow-x-hidden margin-0">
-  <!--  -->
+    <title>florenciaarezzo.com</title>
+  </head>
 
-  <div id="loader" class="absolute z-30 vh-100 vw-100 bg-black">
-    <div class="text-center mt-[30%]">
-      <svg role="status"
-        class="inline w-12 h-12 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
-        viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-          fill="currentColor" />
-        <path
-          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-          fill="currentFill" />
-      </svg>
-      <p class="text-white mt-6 tracking-widest" style="font-family: 'DolceVitaBold'">
-        Loading...
-      </p>
+  <body class="bg-black overflow-x-hidden margin-0">
+    <!--  -->
+
+    <div id="loader" class="absolute z-30 vh-100 vw-100 bg-black">
+      <div class="text-center mt-[30%]">
+        <svg
+          role="status"
+          class="inline w-12 h-12 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
+          viewBox="0 0 100 101"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor"
+          />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill"
+          />
+        </svg>
+        <p
+          class="text-white mt-6 tracking-widest"
+          style="font-family: 'DolceVitaBold'"
+        >
+          Loading...
+        </p>
+      </div>
     </div>
-  </div>
 
-  <div id="hero" class="absolute z-20" style="transition: ease-in-out 1s">
-    <div class="relative">
-      <video id="hero-video" class="vw-100 vh-100 object-cover" poster="assets/images/hero-video-poster.png" autoplay
-        loop muted playsinline preload="auto" onclick="this.paused ? this.play() : this.pause();"></video>
-    </div>
+    <div id="hero" class="absolute z-20" style="transition: ease-in-out 1s">
+      <div class="relative">
+        <video
+          id="hero-video"
+          class="vw-100 vh-100 object-cover"
+          poster="assets/images/hero-video-poster.png"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+          onclick="this.paused ? this.play() : this.pause();"
+        ></video>
+      </div>
 
-    <header>
-      <div class="absolute top-0 start-0 m-4">
-        <div class="row row-cols-auto text-white text-xl" style="font-family: 'DolceVitaBold'">
-          <a class="col no-underline mx-2 hover:text-gray-700" href="pages/about.html">About</a>
-          <div id="projectsHeaderLink" class="col no-underline mx-2 cursor-pointer hover:text-gray-700">
-            Projects
+      <header>
+        <div class="absolute top-0 start-0 m-4">
+          <div
+            class="row row-cols-auto text-white text-xl"
+            style="font-family: 'DolceVitaBold'"
+          >
+            <a
+              class="col no-underline mx-2 hover:text-gray-700"
+              href="pages/about.html"
+              >About</a
+            >
+            <div
+              id="projectsHeaderLink"
+              class="col no-underline mx-2 cursor-pointer hover:text-gray-700"
+            >
+              Projects
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <div class="absolute top-50 start-50 translate-middle text-white text-center tracking-[0.6rem] lg:tracking-[3rem]"
-      style="font-family: 'DolceVitaBold'">
-      <div class="col fs-1">FlorenciaArezzo</div>
-      <div class="col fs-5">3DDesigner</div>
+      <div
+        class="absolute top-50 start-50 translate-middle text-white text-center tracking-[0.6rem] lg:tracking-[3rem]"
+        style="font-family: 'DolceVitaBold'"
+      >
+        <div class="col fs-1">FlorenciaArezzo</div>
+        <div class="col fs-5">3DDesigner</div>
+      </div>
+
+      <div id="clickMe" class="absolute" style="top: 60vh; right: 10vh">
+        <div
+          class="relative color-white rotate-minus-20 z-10 cursor-pointer hover:text-gray-700"
+          style="top: 2.5rem; left: 0.2rem"
+        >
+          CLICK
+        </div>
+        <div class="relative click-me bg-slate-900"></div>
+      </div>
+
+      <div class="down-arrow"></div>
     </div>
 
-    <div id="clickMe" class="absolute" style="top: 60vh; right: 10vh">
-      <div class="relative color-white rotate-minus-20 z-10 cursor-pointer hover:text-gray-700"
-        style="top: 2.5rem; left: 0.2rem">
-        CLICK
-      </div>
-      <div class="relative click-me bg-slate-900"></div>
-    </div>
+    <div
+      id="blackout"
+      class="absolute bg-black z-10 w-full"
+      style="transition: ease 3s"
+    ></div>
 
-    <div class="down-arrow"></div>
-  </div>
+    <div id="content" class="relative">
+      <section>
+        <div
+          class="md:flex text-center text-white text-2xl tracking-[0.7rem] dolcevitabold"
+        >
+          <div class="relative h-screen w-full">
+            <a
+              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 bg-black px-3 py-4 hover:text-gray-500"
+              href="pages/digitalapparel.html"
+            >
+              Digital Apparel
+            </a>
 
-  <div id="blackout" class="absolute bg-black z-10 w-full" style="transition: ease 3s"></div>
+            <img
+              class="w-100 h-screen object-cover"
+              src="assets/images/landing-image.jpg"
+              alt=""
+            />
+          </div>
 
-  <div id="content" class="relative">
+          <div class="relative h-screen w-full">
+            <a
+              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 bg-black px-3 py-4 hover:text-gray-500"
+              href="pages/animations.html"
+            >
+              Animations
+            </a>
 
-    <section>
-      <div class="md:flex text-center text-white text-2xl tracking-[0.7rem] dolcevitabold ">
-        <div class="relative h-screen w-full">
-          <a href="pages/digitalapparel.html">
-            <div
-              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 p-4 bg-black hover:text-gray-500">
-              Digital Apparel</div>
-          </a>
-          <img class="w-100 h-screen object-cover" src="assets/images/landing-image.jpg" alt="" />
+            <img
+              class="w-100 h-screen object-cover"
+              src="assets/images/ANIMATIONS2000x2000.jpg"
+              alt=""
+            />
+          </div>
         </div>
-        <div class="relative h-screen w-full">
-          <a href="pages/animations.html">
-            <div
-              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 p-4 bg-black hover:text-gray-500">
-              Animations</div>
-          </a>
-          <img class="w-100 h-screen object-cover" src="assets/images/ANIMATIONS2000x2000.jpg" alt="" />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <div class="md:flex text-center text-white text-2xl tracking-[0.7rem] dolcevitabold ">
-        <div class="relative h-screen w-full">
-          <a href="pages/virtualreality.html">
-            <div
-              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 p-4 bg-black hover:text-gray-500">
-              Virtual Reality</div>
-          </a>
-          <img class="w-100 h-screen object-cover" src="assets/images/VIRTUAL REALITY-01.jpg" alt="" />
-        </div>
-        <div id="webgl" class="relative h-screen md:w-1/2">
-          <a href="pages/nftprojects.html">
-            <div
-              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 p-4 bg-black hover:text-gray-500">
+      <section>
+        <div
+          class="md:flex text-center text-white text-lg md:text-2xl tracking-[0.5rem] dolcevitabold"
+        >
+          <div class="relative h-screen w-full">
+            <a
+              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 bg-black px-3 py-4 hover:text-gray-500"
+              href="pages/virtualreality.html"
+            >
+              Virtual Reality
+            </a>
+
+            <img
+              class="w-100 h-screen object-cover"
+              src="assets/images/VIRTUAL REALITY-01.jpg"
+              alt=""
+            />
+          </div>
+
+          <div id="webgl" class="relative h-screen md:w-1/2">
+            <a
+              class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 bg-black px-3 py-4 hover:text-gray-500"
+              href="pages/nftprojects.html"
+            >
               NFT Projects
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="my-12 flex justify-center">
-      <a href="pages/about.html">
-        <img class="mx-3 cursor-pointer" src="assets/icons/email.png" style="height: 1rem" alt="" />
-      </a>
-      <img class="mx-3" src="assets/icons/divider-vertical.png" style="height: 1rem" alt="" />
-      <a href="https://www.instagram.com/flors_base9.one/" target="_blank">
-        <img class="mx-3 cursor-pointer" src="assets/icons/insta.png" style="height: 1rem" alt="" />
-      </a>
-      <img class="mx-3" src="assets/icons/divider-vertical.png" style="height: 1rem" alt="" />
-      <a href="https://linkedin.com/in/florencia-arezzo-419b39167" target="_blank">
-        <img class="mx-3 cursor-pointer" src="assets/icons/linkedin.png" style="height: 1rem" alt="" />
-      </a>
-      <img class="mx-3" src="assets/icons/divider-vertical.png" style="height: 1rem" alt="" />
-      <a href="pages/about.html">
-        <img class="mx-3 cursor-pointer" src="assets/icons/whatsapp.png" style="height: 1rem" alt="" />
-      </a>
-    </footer>
+      <footer class="my-12 flex justify-center">
+        <a href="pages/about.html">
+          <img
+            class="mx-3 cursor-pointer"
+            src="assets/icons/email.png"
+            style="height: 1rem"
+            alt=""
+          />
+        </a>
+        <img
+          class="mx-3"
+          src="assets/icons/divider-vertical.png"
+          style="height: 1rem"
+          alt=""
+        />
+        <a href="https://www.instagram.com/flors_base9.one/" target="_blank">
+          <img
+            class="mx-3 cursor-pointer"
+            src="assets/icons/insta.png"
+            style="height: 1rem"
+            alt=""
+          />
+        </a>
+        <img
+          class="mx-3"
+          src="assets/icons/divider-vertical.png"
+          style="height: 1rem"
+          alt=""
+        />
+        <a
+          href="https://linkedin.com/in/florencia-arezzo-419b39167"
+          target="_blank"
+        >
+          <img
+            class="mx-3 cursor-pointer"
+            src="assets/icons/linkedin.png"
+            style="height: 1rem"
+            alt=""
+          />
+        </a>
+        <img
+          class="mx-3"
+          src="assets/icons/divider-vertical.png"
+          style="height: 1rem"
+          alt=""
+        />
+        <a href="pages/about.html">
+          <img
+            class="mx-3 cursor-pointer"
+            src="assets/icons/whatsapp.png"
+            style="height: 1rem"
+            alt=""
+          />
+        </a>
+      </footer>
 
-    <div style="height: 10px"></div>
-  </div>
+      <div style="height: 10px"></div>
+    </div>
 
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 
-  <script type="x-shader/x-vertex" id="vertexshader">
+    <script type="x-shader/x-vertex" id="vertexshader">
       attribute float scale;
 
          void main() {
@@ -158,7 +260,7 @@
       }
     </script>
 
-  <script type="x-shader/x-fragment" id="fragmentshader">
+    <script type="x-shader/x-fragment" id="fragmentshader">
       uniform vec3 color;
 
       void main() {
@@ -167,7 +269,6 @@
       }
     </script>
 
-  <script type="module" src="webgl.js"></script>
-</body>
-
+    <script type="module" src="webgl.js"></script>
+  </body>
 </html>
