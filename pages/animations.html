@@ -1,59 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>florenciaarezzo.com | Animations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css" />
-</head>
+  </head>
 
-<body class="bg-black overflow-x-hidden margin-0">
-
+  <body class="bg-black overflow-x-hidden margin-0">
     <!-- Navbar -->
     <header class="mt-6 mb-4 mx-2">
-
-        <div class="flex flex-wrap text-white text-xs md:text-lg" style="font-family: 'DolceVitaBold'">
-
-            <a class="no-underline mt-2 mx-4 hover:text-gray-400" href="../index.html">Main</a>
-            <a class="no-underline mt-2 mx-4 hover:text-gray-400" href="../pages/digitalapparel.html">Digital
-                Apparel</a>
-            <a class="underline underline-offset-4 mt-2 mx-4 hover:text-gray-400"
-                href="../pages/animations.html">Animations</a>
-            <a class="no-underline mt-2 mx-4 hover:text-gray-400" href="../pages/virtualreality.html">Virtual
-                Reality</a>
-            <a class="no-underline mt-2 mx-4 hover:text-gray-400" href="../pages/nftprojects.html">NFT
-                Projects</a>
-
-        </div>
-
+      <div
+        class="flex flex-wrap text-white text-xs md:text-lg"
+        style="font-family: 'DolceVitaBold'"
+      >
+        <a
+          class="no-underline mt-2 mx-4 hover:text-gray-400"
+          href="../index.html"
+          >Main</a
+        >
+        <a
+          class="no-underline mt-2 mx-4 hover:text-gray-400"
+          href="../pages/digitalapparel.html"
+          >Digital Apparel</a
+        >
+        <a
+          class="underline underline-offset-4 mt-2 mx-4 hover:text-gray-400"
+          href="../pages/animations.html"
+          >Animations</a
+        >
+        <a
+          class="no-underline mt-2 mx-4 hover:text-gray-400"
+          href="../pages/virtualreality.html"
+          >Virtual Reality</a
+        >
+        <a
+          class="no-underline mt-2 mx-4 hover:text-gray-400"
+          href="../pages/nftprojects.html"
+          >NFT Projects</a
+        >
+      </div>
     </header>
-
 
     <!-- First stripe -->
     <div class="h-screen w-screen md:flex">
+      <!-- Social links -->
+      <div
+        class="absolute text-white text-xs md:text-sm flex z-10 top-[10%] md:top-[15%] right-[5%]"
+        style="font-family: 'DolceVita'"
+      >
+        <a
+          class="flex hover:text-slate-500"
+          href="https://www.instagram.com/pwr.supply/"
+          target="_blank"
+        >
+          <p class="mx-1 leading-6">PWR.SUPPLY</p>
+          <img
+            class="h-6 mx-1"
+            src="../assets/icons/Instagram_logo.png"
+            alt=""
+          />
+        </a>
+        <a href="https://pwr.supply/" target="_blank">
+          <img class="h-6 mx-1" src="../assets/icons/Web_logo.png" alt="" />
+        </a>
+      </div>
 
-        <!-- Social links -->
-        <div class="absolute text-white text-xs md:text-sm flex z-10 top-[10%] md:top-[15%] right-[5%]"
-            style="font-family: 'DolceVita'">
-            <a class="flex hover:text-slate-500" href="https://www.instagram.com/pwr.supply/" target="_blank">
-                <p class="mx-1 leading-6">PWR.SUPPLY</p>
-                <img class="h-6 mx-1" src="../assets/icons/Instagram_logo.png" alt="">
-            </a>
-            <a href="https://pwr.supply/" target="_blank">
-                <img class="h-6 mx-1" src="../assets/icons/Web_logo.png" alt="">
-            </a>
-        </div>
-
-        <!-- First stripe videos -->
-        <video class="w-full md:w-1/2 object-cover" src="../assets/animations/PWR_01.m4v" autoplay loop></video>
-        <video class="w-full md:w-1/2 object-cover" src="../assets/animations/PWR_02.m4v" autoplay loop></video>
-
+      <!-- First stripe videos -->
+      <video
+        class="w-full md:w-1/2 object-cover"
+        src="../assets/animations/PWR_01.m4v"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        onclick="this.paused ? this.play() : this.pause();"
+      ></video>
+      <video
+        class="w-full md:w-1/2 object-cover"
+        src="../assets/animations/PWR_02.m4v"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        onclick="this.paused ? this.play() : this.pause();"
+      ></video>
     </div>
-
-
-</body>
-
+  </body>
 </html>
