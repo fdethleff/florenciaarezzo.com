@@ -198,3 +198,10 @@
     margin-top: 0;
   }
 }
+
+.grid-bg {
+  background-image: url("assets/images/Background-04.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
