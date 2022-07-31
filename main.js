@@ -20,19 +20,21 @@ window.onload = function () {
 };
 
 window.addEventListener("scroll", function () {
-  let hero = document.getElementById("hero");
-  let blackout = document.getElementById("blackout");
-  let content = document.getElementById("content");
-  if (window.scrollY > 10) {
-    hero.style.transform = `translateY(-${window.innerHeight}px)`;
-    blackout.style.opacity = 0;
-    blackout.classList.remove("z-10");
-    let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
-    content.style.top = `${dynamicTopValue}px`;
-  } else {
-    hero.style.transform = "translateY(0)";
-    blackout.style.opacity = 1;
-    blackout.classList.add("z-10");
+  if (window.innerWidth >= 992) {
+    let hero = document.getElementById("hero");
+    let blackout = document.getElementById("blackout");
+    let content = document.getElementById("content");
+    if (window.scrollY > 10) {
+      hero.style.transform = `translateY(-${window.innerHeight}px)`;
+      blackout.style.opacity = 0;
+      blackout.classList.remove("z-10");
+      let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
+      content.style.top = `${dynamicTopValue}px`;
+    } else {
+      hero.style.transform = "translateY(0)";
+      blackout.style.opacity = 1;
+      blackout.classList.add("z-10");
+    }
   }
 });
 

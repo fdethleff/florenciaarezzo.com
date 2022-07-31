@@ -22,6 +22,9 @@
 </head>
 
 <body class="bg-black overflow-x-hidden margin-0">
+
+  <!-- Loading spinner -->
+
   <div id="loader" class="absolute z-30 vh-100 vw-100 bg-black">
     <div class="text-center mt-[30%]">
       <svg role="status"
@@ -40,11 +43,15 @@
     </div>
   </div>
 
-  <div id="hero" class="absolute z-20" style="transition: ease-in-out 1s">
+  <!-- Hero -->
+
+  <div id="hero" class="lg:absolute z-20" style="transition: ease-in-out 1s">
     <div class="relative">
       <video id="hero-video" class="vw-100 vh-100 object-cover" poster="assets/images/hero-video-poster.png" autoplay
         loop muted playsinline preload="auto" onclick="this.paused ? this.play() : this.pause();"></video>
     </div>
+
+    <!-- Navbar -->
 
     <header>
       <div class="absolute top-0 start-0 m-4">
@@ -74,9 +81,16 @@
     <div class="down-arrow"></div>
   </div>
 
-  <div id="blackout" class="absolute bg-black z-10 w-full" style="transition: ease 3s"></div>
+  <!-- Slide up effect helper -->
+
+  <div id="blackout" class="absolute bg-black z-10 w-full d-none d-lg-block" style="transition: ease 3s"></div>
+
+  <!-- Content -->
 
   <div id="content" class="relative">
+
+    <!-- Stripe 1 -->
+
     <section>
       <div class="md:flex text-center text-white text-lg md:text-2xl tracking-[0.6rem] dolcevitabold">
         <div class="relative h-screen w-full">
@@ -99,6 +113,8 @@
       </div>
     </section>
 
+    <!-- Stripe 2 -->
+
     <section>
       <div class="md:flex text-center text-white text-lg md:text-2xl tracking-[0.6rem] dolcevitabold">
         <div class="relative h-screen w-full">
@@ -118,6 +134,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
 
     <footer class="my-12 flex justify-center">
       <a href="pages/about.html">
@@ -140,6 +158,8 @@
     <div style="height: 10px"></div>
   </div>
 
+  <!-- Custom scripts -->
+
   <script src="main.js"></script>
 
   <script type="x-shader/x-vertex" id="vertexshader">
@@ -161,7 +181,10 @@
       }
     </script>
 
+
+
   <script type="module" src="webgl.js"></script>
+
 </body>
 
 </html>
