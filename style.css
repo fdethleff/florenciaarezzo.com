@@ -214,7 +214,7 @@
   background-color: rgb(17, 17, 17);
   animation-name: fadeOut;
   animation-iteration-count: 1;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
@@ -234,7 +234,7 @@
   border-color: #ffffff;
   animation-name: progressBar;
   animation-iteration-count: 1;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
