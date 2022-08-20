@@ -210,6 +210,7 @@
   position: absolute;
   z-index: 30;
   width: 50%;
+  padding: 2rem;
   background-color: rgb(17, 17, 17);
   animation-name: fadeOut;
   animation-iteration-count: 1;
