@@ -1,7 +1,3 @@
-setTimeout(function () {
-  document.getElementById("loader").classList.add("hidden");
-}, 2000);
-
 window.onload = function () {
   let heroVideoDirectory = "assets/videos/";
   let heroVideo = document.getElementById("hero-video");
