@@ -279,7 +279,7 @@
 
 @keyframes progressBarCanvas {
   0% {
-    width: 10%;
+    width: 1%;
   }
   
   100% {
