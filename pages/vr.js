@@ -34,7 +34,7 @@ function init() {
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.shadowMap.enabled = true;
     renderer.physicallyCorrectLights = true;
-    renderer.toneMapping = THREE.ReinhardToneMapping;
+    // renderer.toneMapping = THREE.ReinhardToneMapping;
     container.appendChild( renderer.domElement );
 
 
@@ -63,8 +63,8 @@ function init() {
 
 
     // Lights
-    strongLight = new THREE.SpotLight(0xFFFFFF, 100, 0, Math.PI / 2, 1);
-    strongLight.position.set(1, 4, 1);
+    strongLight = new THREE.SpotLight(0xFFFFFF, 30, 0, Math.PI / 2, 1);
+    strongLight.position.set(0, 3, 1);
     lowLight = new THREE.SpotLight(0xFFFFFF, 2, 100, 2);
     lowLight.position.set(1, 2, 1);
     noLight = new THREE.SpotLight(0xffee88, 0, 100, 2);
@@ -207,7 +207,7 @@ function init() {
     controls.minDistance = 1;
     controls.maxDistance = 2.5;
     controls.autoRotate = true;
-    controls.maxPolarAngle = Math.PI / 1.5;
+    controls.maxPolarAngle = Math.PI / 2;
     controls.minPolarAngle = 0;
 
 
