@@ -56,7 +56,7 @@ function init() {
     const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 5, 0.4, 0.85 );
     bloomPass.threshold = 1;
     bloomPass.strength = 3;
-    bloomPass.radius = 1.4;
+    bloomPass.radius = 1;
     composer = new EffectComposer( renderer );
     composer.addPass( renderScene );
     composer.addPass( bloomPass );
@@ -65,8 +65,8 @@ function init() {
     // Lights
     strongLight = new THREE.SpotLight(0xFFFFFF, 30, 0, Math.PI / 2, 1);
     strongLight.position.set(0, 3, 1);
-    lowLight = new THREE.SpotLight(0xFFFFFF, 2, 100, 2);
-    lowLight.position.set(1, 2, 1);
+    lowLight = new THREE.SpotLight(0xFFFFFF, 1, 100, 2);
+    lowLight.position.set(1, 3, 1);
     noLight = new THREE.SpotLight(0xffee88, 0, 100, 2);
     noLight.position.set(1, 2, 1);
 
@@ -162,8 +162,8 @@ function init() {
         loadModel(model2);
         setNoLight();
         bloomPass.threshold = 0;
-        bloomPass.strength = 0.5;
-        bloomPass.radius = 0.5;
+        bloomPass.strength = 0.3;
+        
         
         // hide loading bar after timeout
         setTimeout(function () {
@@ -189,7 +189,7 @@ function init() {
         loadModel(model3);
         setLowLight();
         bloomPass.threshold = 0;
-        bloomPass.strength = 4;
+        bloomPass.strength = 2.5;
         
         // hide loading bar after timeout
         setTimeout(function () {
