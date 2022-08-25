@@ -258,7 +258,7 @@
   justify-content: center;
   align-items: center;
   background-size: cover;
-  background-image: url("assets/patterns/canvas_loading_bg_new.svg");
+  background-image: url("assets/patterns/canvas_loading_bg.svg");
   height: 1%;
   border-radius: 10px;
   animation-name: progressBarCanvas;
