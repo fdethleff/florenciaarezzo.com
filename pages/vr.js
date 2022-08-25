@@ -140,7 +140,7 @@ function init() {
         setTimeout(function () {
             document.getElementById('ProgressBarCanvas').classList.remove('visible');
             document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        }, 5000);
+        }, 3000);
 
         
     });
@@ -169,7 +169,7 @@ function init() {
         setTimeout(function () {
             document.getElementById('ProgressBarCanvas').classList.remove('visible');
             document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        }, 5000);
+        }, 3000);
     });
 
     document.getElementById('reflective').addEventListener('click', function () {
@@ -195,7 +195,7 @@ function init() {
         setTimeout(function () {
             document.getElementById('ProgressBarCanvas').classList.remove('visible');
             document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        }, 5000);
+        }, 3000);
     });
 
 
