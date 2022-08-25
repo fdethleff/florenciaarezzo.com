@@ -111,7 +111,7 @@ function init() {
                 model.scale.set(1, 1, 1);
                 model.position.set(-0.3, -1.35, 0);
                 scene.add( model );
-                dracoLoader.dispose();
+                // dracoLoader.dispose();
             },
         );
     }
