@@ -252,8 +252,8 @@
 #ProgressCanvas {
   position: fixed;
   top: 50%;
-  left: 60%;
-  margin-left: -25%;
+  left: 20%;
+  margin-left: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,7 +273,7 @@
   }
   
   100% {
-    width: 30%;
+    width: 50%;
   }
 }
 
