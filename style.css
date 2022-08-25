@@ -222,7 +222,6 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -10%;
   margin-left: -25%;
   display: flex;
   justify-content: center;
@@ -263,4 +262,20 @@
     opacity: 0;
     visibility: hidden;
   }
+}
+
+
+.active-button {
+  padding: 0.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+}
+
+.inactive-button {
+  padding: 0.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
 }

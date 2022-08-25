@@ -46,20 +46,39 @@
         </div>
     </nav>
 
-    <!-- First stripe -->
 
-    <div class="h-screen w-screen">
-        <div class="h-1/2 w-full flex items-center justify-center">
-            <div class="text-center text-xl md:text-4xl text-white" style="font-family: 'DolceVitaBold'">SOON
-            </div>
-        </div>
-    </div>
+    <!-- Scene buttons -->
+    <button id="day" class="absolute active-button" style="right: 10%; top: 43%;">DAY
+        MODE</button>
+    <button id="reflective" class="absolute inactive-button" style="right: 10%; top: 50%;">REFLECTIVE
+        MODE</button>
+    <button id="night" class="absolute inactive-button" style="right: 10%; top: 57%;">NIGHT
+        MODE</button>
+
+    <!-- Canvas -->
+    <div id="canvas" class="container-fluid"></div>
+
 
     <!-- Bootstrap script -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+
+
+    <!-- Three.js -->
+    <script async src="https://unpkg.com/es-module-shims@1.5.17/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.143.0/build/three.module.js",
+          "orbitControls": "https://unpkg.com/three@0.143.0/examples/jsm/controls/OrbitControls.js",
+          "GLTFLoader": "https://unpkg.com/three@0.143.0/examples/jsm/loaders/GLTFLoader.js",
+          "DRACOLoader": "https://unpkg.com/three@0.143.0/examples/jsm/loaders/DRACOLoader.js"
+        }
+      }
+    </script>
+    <script type="module" src="vr.js"></script>
+
 
 
 </body>

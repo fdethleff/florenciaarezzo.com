@@ -50,12 +50,14 @@
       </div>
     </header>
 
+    <!-- Hero title -->
     <div class="absolute top-50 start-50 translate-middle text-white text-center tracking-[0.6rem] lg:tracking-[3rem]"
       style="font-family: 'DolceVitaBold'">
       <div class="col fs-1">FlorenciaArezzo</div>
       <div class="col fs-5">3DDesigner</div>
     </div>
 
+    <!-- Hero video play button -->
     <div id="clickMe" class="absolute" style="top: 60vh; right: 10vh">
       <div class="relative color-white rotate-minus-20 z-10 cursor-pointer hover:text-gray-700"
         style="top: 2.5rem; left: 0.2rem">
@@ -64,19 +66,19 @@
       <div class="relative click-me bg-slate-900"></div>
     </div>
 
-    <div class="down-arrow"></div>
+    <!-- Hero scroll hint -->
+    <div id="heroScrollArrow" class="down-arrow"></div>
   </div>
 
   <!-- Slide up effect helper -->
-
   <div id="blackout" class="absolute bg-black z-10 w-full d-none d-lg-block" style="transition: ease 3s"></div>
 
-  <!-- Content -->
 
+  <!-- Content -->
   <div id="content" class="relative">
 
-    <!-- Stripe 1 -->
 
+    <!-- Stripe 1 -->
     <section>
       <div class="md:flex text-center text-white text-lg md:text-2xl tracking-[0.6rem] dolcevitabold">
         <div class="relative h-screen w-full">
@@ -99,8 +101,8 @@
       </div>
     </section>
 
-    <!-- Stripe 2 -->
 
+    <!-- Stripe 2 -->
     <section>
       <div class="md:flex text-center text-white text-lg md:text-2xl tracking-[0.6rem] dolcevitabold">
         <div class="relative h-screen w-full">
@@ -120,6 +122,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="my-12 flex justify-center">
@@ -143,10 +146,9 @@
     <div style="height: 10px"></div>
   </div>
 
+
   <!-- Custom scripts -->
-
   <script src="main.js"></script>
-
   <script type="x-shader/x-vertex" id="vertexshader">
       attribute float scale;
 
@@ -156,7 +158,6 @@
       	gl_Position = projectionMatrix * mvPosition;
       }
     </script>
-
   <script type="x-shader/x-fragment" id="fragmentshader">
       uniform vec3 color;
 
@@ -165,10 +166,8 @@
       	gl_FragColor = vec4( color, 1.0 );
       }
     </script>
-
-
-
   <script type="module" src="webgl.js"></script>
+
 
 </body>
 
