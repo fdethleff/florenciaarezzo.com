@@ -119,20 +119,24 @@ function init() {
     loadModel(model1);
 
     document.getElementById('day').addEventListener('click', function () {
-        loadModel(model1);
-        setStrongLight();
-        bloomPass.threshold = 1;
-        
-        
+        // update button state
         document.getElementById('day').classList.add('active-button');
         document.getElementById('day').classList.remove('inactive-button');
         document.getElementById('night').classList.remove('active-button');
         document.getElementById('night').classList.add('inactive-button');
         document.getElementById('reflective').classList.add('inactive-button');
         document.getElementById('reflective').classList.remove('active-button');
-
+        
+        // show loading bar
         document.getElementById('ProgressBarCanvas').classList.remove('hidden');
         document.getElementById('ProgressBarCanvas').classList.add('visible');
+        
+        // load new model
+        loadModel(model1);
+        setStrongLight();
+        bloomPass.threshold = 1;
+        
+        // hide loading bar after timeout
         setTimeout(function () {
             document.getElementById('ProgressBarCanvas').classList.remove('visible');
             document.getElementById('ProgressBarCanvas').classList.add('hidden');
@@ -142,21 +146,26 @@ function init() {
     });
 
     document.getElementById('night').addEventListener('click', function () {
-        loadModel(model2);
-        setNoLight();
-        bloomPass.threshold = 0;
-        bloomPass.strength = 0.5;
-        bloomPass.radius = 0.5;
-        
+        // update button state
         document.getElementById('day').classList.remove('active-button');
         document.getElementById('day').classList.add('inactive-button');
         document.getElementById('night').classList.add('active-button');
         document.getElementById('night').classList.remove('inactive-button');
         document.getElementById('reflective').classList.add('inactive-button');
         document.getElementById('reflective').classList.remove('active-button');
-
+        
+        // show loading bar
         document.getElementById('ProgressBarCanvas').classList.remove('hidden');
         document.getElementById('ProgressBarCanvas').classList.add('visible');
+
+        // load new model
+        loadModel(model2);
+        setNoLight();
+        bloomPass.threshold = 0;
+        bloomPass.strength = 0.5;
+        bloomPass.radius = 0.5;
+        
+        // hide loading bar after timeout
         setTimeout(function () {
             document.getElementById('ProgressBarCanvas').classList.remove('visible');
             document.getElementById('ProgressBarCanvas').classList.add('hidden');
@@ -164,20 +173,25 @@ function init() {
     });
 
     document.getElementById('reflective').addEventListener('click', function () {
-        loadModel(model3);
-        setLowLight();
-        bloomPass.threshold = 0;
-        bloomPass.strength = 4;
-        
+        // update button state
         document.getElementById('day').classList.remove('active-button');
         document.getElementById('day').classList.add('inactive-button');
         document.getElementById('night').classList.remove('active-button');
         document.getElementById('night').classList.add('inactive-button');
         document.getElementById('reflective').classList.remove('inactive-button');
         document.getElementById('reflective').classList.add('active-button');
-
+        
+        // show loading bar
         document.getElementById('ProgressBarCanvas').classList.remove('hidden');
         document.getElementById('ProgressBarCanvas').classList.add('visible');
+
+        // load new model
+        loadModel(model3);
+        setLowLight();
+        bloomPass.threshold = 0;
+        bloomPass.strength = 4;
+        
+        // hide loading bar after timeout
         setTimeout(function () {
             document.getElementById('ProgressBarCanvas').classList.remove('visible');
             document.getElementById('ProgressBarCanvas').classList.add('hidden');
