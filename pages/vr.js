@@ -91,49 +91,10 @@ function init() {
         scene.remove(lowLight);
         scene.add(noLight);
     }
-
-
-    // Loading manager  
-    const loadingManager = new THREE.LoadingManager( 
-        // () => {
-        // const loadingScreen = document.getElementById( 'loading-screen' );
-        // loadingScreen.classList.add( 'fade-out' );
-        // loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
-    // }
-    );
     
-    
-    
-
-
-//     var manager = new THREE.LoadingManager();
-// var texLoader = new THREE.TextureLoader(manager);
-
-// function loadGroup1() {
-//     manager.onLoad = () => {
-//         console.log("Group 1 complete");
-//     };
-//     texLoader.load("img1.png");
-//     texLoader.load("img2.png");
-// }
-
-// function loadGroup2() {
-//     manager.onLoad = () => {
-//         console.log("Group 2 loaded");
-//     };
-//     texLoader.load("img3.png");
-//     texLoader.load("img4.png");
-// }
-
-// function loadGroup3() {
-//     manager.onLoad = () => {
-//         console.log("Group 3 finished");
-//     };
-//     texLoader.load("img5.png");
-//     texLoader.load("img6.png");
-// }
     
     // Load models
+    const loadingManager = new THREE.LoadingManager();
     const loader = new GLTFLoader(loadingManager);
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderConfig({ type: 'js' });
@@ -149,7 +110,7 @@ function init() {
             console.log("Model loaded");
             
         }
-        
+
         loader.load(
             model, function ( glb ) {
                 // remove all group objects from the scene
@@ -162,7 +123,6 @@ function init() {
                 model.scale.set(1, 1, 1);
                 model.position.set(-0.3, -1.35, 0);
                 scene.add( model );
-                // dracoLoader.dispose();
             },
         );
         
