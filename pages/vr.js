@@ -17,8 +17,8 @@ function init() {
 
     models = [
         '../assets/models/220823_Windbreaker_DAY.glb',
-        '../assets/models/220823_Windbreaker_NIGHT.glb',
-        '../assets/models/220823_Windbreaker_REFLECTIVE.glb'
+        '../assets/models/220823_Windbreaker_REFLECTIVE.glb',
+        '../assets/models/220823_Windbreaker_NIGHT.glb'
     ];
 
     // DOM elements
@@ -36,7 +36,7 @@ function init() {
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.shadowMap.enabled = true;
     renderer.physicallyCorrectLights = true;
-    // renderer.toneMapping = THREE.ReinhardToneMapping;
+    renderer.toneMapping = THREE.ReinhardToneMapping;
     container.appendChild( renderer.domElement );
 
 
@@ -104,16 +104,13 @@ function init() {
     function loadModel(model) {
         loadingManager.onLoad = () => {
             const el = document.getElementById( 'loading-screen' );
-            el.classList.add( 'visible' );
             el.classList.add( 'fade-out' );
             el.addEventListener( 'transitionend', onTransitionEnd );
-            console.log("Model loaded");
-            
         }
 
         loader.load(
             model, function ( glb ) {
-                // remove all group objects from the scene
+                    
                 for (var child in scene.children) {
                     if (scene.children[child].type === 'Group') {
                         scene.remove(scene.children[child]);
@@ -133,82 +130,64 @@ function init() {
 
     document.getElementById('day').addEventListener('click', function () {
         // update button state
-        document.getElementById('day').classList.add('active-button');
         document.getElementById('day').classList.remove('inactive-button');
+        document.getElementById('day').classList.add('active-button');
+        document.getElementById('reflective').classList.remove('active-button');
+        document.getElementById('reflective').classList.add('inactive-button');
         document.getElementById('night').classList.remove('active-button');
         document.getElementById('night').classList.add('inactive-button');
-        document.getElementById('reflective').classList.add('inactive-button');
-        document.getElementById('reflective').classList.remove('active-button');
-        
-        // show loading bar
-        // document.getElementById('ProgressBarCanvas').classList.remove('hidden');
-        // document.getElementById('ProgressBarCanvas').classList.add('visible');
+
+        // reset loading state
+        const el = document.getElementById( 'loading-screen' );
+        el.classList.remove( 'fade-out' );
+        el.classList.remove( 'hidden' );
         
         // load new model
         loadModel(models[0]);
         setStrongLight();
         bloomPass.threshold = 1;
-        
-        // hide loading bar after timeout
-        // setTimeout(function () {
-        //     document.getElementById('ProgressBarCanvas').classList.remove('visible');
-        //     document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        // }, 4000);
-
-        
-    });
-
-    document.getElementById('night').addEventListener('click', function () {
-        // update button state
-        document.getElementById('day').classList.remove('active-button');
-        document.getElementById('day').classList.add('inactive-button');
-        document.getElementById('night').classList.add('active-button');
-        document.getElementById('night').classList.remove('inactive-button');
-        document.getElementById('reflective').classList.add('inactive-button');
-        document.getElementById('reflective').classList.remove('active-button');
-        
-        // show loading bar
-        // document.getElementById('ProgressBarCanvas').classList.remove('hidden');
-        // document.getElementById('ProgressBarCanvas').classList.add('visible');
-
-        // load new model
-        loadModel(models[1]);
-        setNoLight();
-        bloomPass.threshold = 0;
-        bloomPass.strength = 0.3;
-        
-        
-        // hide loading bar after timeout
-        // setTimeout(function () {
-        //     document.getElementById('ProgressBarCanvas').classList.remove('visible');
-        //     document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        // }, 4000);
     });
 
     document.getElementById('reflective').addEventListener('click', function () {
         // update button state
         document.getElementById('day').classList.remove('active-button');
         document.getElementById('day').classList.add('inactive-button');
-        document.getElementById('night').classList.remove('active-button');
-        document.getElementById('night').classList.add('inactive-button');
         document.getElementById('reflective').classList.remove('inactive-button');
         document.getElementById('reflective').classList.add('active-button');
-        
-        // show loading bar
-        // document.getElementById('ProgressBarCanvas').classList.remove('hidden');
-        // document.getElementById('ProgressBarCanvas').classList.add('visible');
+        document.getElementById('night').classList.remove('active-button');
+        document.getElementById('night').classList.add('inactive-button');
 
+        // reset loading state
+        const el = document.getElementById( 'loading-screen' );
+        el.classList.remove( 'fade-out' );
+        el.classList.remove( 'hidden' );
+        
         // load new model
-        loadModel(models[2]);
+        loadModel(models[1]);
         setLowLight();
         bloomPass.threshold = 0;
         bloomPass.strength = 2.5;
-        
-        // hide loading bar after timeout
-        // setTimeout(function () {
-        //     document.getElementById('ProgressBarCanvas').classList.remove('visible');
-        //     document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        // }, 4000);
+    });
+
+    document.getElementById('night').addEventListener('click', function () {
+        // update button state
+        document.getElementById('day').classList.remove('active-button');
+        document.getElementById('day').classList.add('inactive-button');
+        document.getElementById('reflective').classList.remove('active-button');
+        document.getElementById('reflective').classList.add('inactive-button');
+        document.getElementById('night').classList.remove('inactive-button');
+        document.getElementById('night').classList.add('active-button');
+
+        // reset loading state
+        const el = document.getElementById( 'loading-screen' );
+        el.classList.remove( 'fade-out' );
+        el.classList.remove( 'hidden' );
+
+        // load new model
+        loadModel(models[2]);
+        setNoLight();
+        bloomPass.threshold = 0;
+        bloomPass.strength = 0.5;
     });
 
 
@@ -256,4 +235,5 @@ function animate() {
 
 function onTransitionEnd( event ) {
     event.target.classList.add('hidden');
+    event.target.classList.remove('visible');
 }
