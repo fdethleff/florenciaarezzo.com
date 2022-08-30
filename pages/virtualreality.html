@@ -15,9 +15,16 @@
 <body class="bg-black overflow-x-hidden margin-0">
 
     <!-- Loading progress bar -->
-    <div id="ProgressBar" class="vh-100 vw-100">
+    <!-- <div id="ProgressBar" class="vh-100 vw-100">
         <div id="Progress" style="font-family: 'DolceVitaBold'">Loading</div>
-    </div>
+    </div> -->
+
+    <!-- Loading screen -->
+    <section id="loading-screen">
+        <div id="loader"></div>
+    </section>
+
+
 
     <!-- Navbar -->
 
@@ -64,9 +71,9 @@
 
 
     <!-- Canvas Loading -->
-    <div id="ProgressBarCanvas" class="vh-100 vw-100 hidden">
+    <!-- <div id="ProgressBarCanvas" class="vh-100 vw-100 hidden">
         <div id="ProgressCanvas"></div>
-    </div>
+    </div> -->
 
 
 
@@ -93,7 +100,6 @@
           "RenderPass": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/RenderPass.js",
           "UnrealBloomPass": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/UnrealBloomPass.js",
           "ShaderPass": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/ShaderPass.js"
-          
         }
       }
     </script>

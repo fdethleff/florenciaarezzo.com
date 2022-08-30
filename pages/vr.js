@@ -8,16 +8,18 @@ import {UnrealBloomPass} from 'UnrealBloomPass';
 
 
 
-let camera, scene, renderScene, renderer, strongLight, lowLight, noLight, controls, composer, mixer, clock;
-let model1 = '../assets/models/220823_Windbreaker_DAY.glb';
-let model2 = '../assets/models/220823_Windbreaker_NIGHT.glb';
-let model3 = '../assets/models/220823_Windbreaker_REFLECTIVE.glb';
-
+let camera, scene, renderScene, renderer, strongLight, lowLight, noLight, controls, composer, clock, models;
 
 init();
 
 
 function init() {
+
+    models = [
+        '../assets/models/220823_Windbreaker_DAY.glb',
+        '../assets/models/220823_Windbreaker_NIGHT.glb',
+        '../assets/models/220823_Windbreaker_REFLECTIVE.glb'
+    ];
 
     // DOM elements
     const container = document.getElementById('canvas');
@@ -91,14 +93,63 @@ function init() {
     }
 
 
-    // Models
-    const loader = new GLTFLoader();
+    // Loading manager  
+    const loadingManager = new THREE.LoadingManager( 
+        // () => {
+        // const loadingScreen = document.getElementById( 'loading-screen' );
+        // loadingScreen.classList.add( 'fade-out' );
+        // loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
+    // }
+    );
+    
+    
+    
+
+
+//     var manager = new THREE.LoadingManager();
+// var texLoader = new THREE.TextureLoader(manager);
+
+// function loadGroup1() {
+//     manager.onLoad = () => {
+//         console.log("Group 1 complete");
+//     };
+//     texLoader.load("img1.png");
+//     texLoader.load("img2.png");
+// }
+
+// function loadGroup2() {
+//     manager.onLoad = () => {
+//         console.log("Group 2 loaded");
+//     };
+//     texLoader.load("img3.png");
+//     texLoader.load("img4.png");
+// }
+
+// function loadGroup3() {
+//     manager.onLoad = () => {
+//         console.log("Group 3 finished");
+//     };
+//     texLoader.load("img5.png");
+//     texLoader.load("img6.png");
+// }
+    
+    // Load models
+    const loader = new GLTFLoader(loadingManager);
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderConfig({ type: 'js' });
     dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
     loader.setDRACOLoader( dracoLoader );
 
     function loadModel(model) {
+        loadingManager.onLoad = () => {
+            const el = document.getElementById( 'loading-screen' );
+            el.classList.add( 'visible' );
+            el.classList.add( 'fade-out' );
+            el.addEventListener( 'transitionend', onTransitionEnd );
+            console.log("Model loaded");
+            
+        }
+        
         loader.load(
             model, function ( glb ) {
                 // remove all group objects from the scene
@@ -114,9 +165,11 @@ function init() {
                 // dracoLoader.dispose();
             },
         );
+        
+        
     }
 
-    loadModel(model1);
+    loadModel(models[0]);
 
     document.getElementById('day').addEventListener('click', function () {
         // update button state
@@ -128,19 +181,19 @@ function init() {
         document.getElementById('reflective').classList.remove('active-button');
         
         // show loading bar
-        document.getElementById('ProgressBarCanvas').classList.remove('hidden');
-        document.getElementById('ProgressBarCanvas').classList.add('visible');
+        // document.getElementById('ProgressBarCanvas').classList.remove('hidden');
+        // document.getElementById('ProgressBarCanvas').classList.add('visible');
         
         // load new model
-        loadModel(model1);
+        loadModel(models[0]);
         setStrongLight();
         bloomPass.threshold = 1;
         
         // hide loading bar after timeout
-        setTimeout(function () {
-            document.getElementById('ProgressBarCanvas').classList.remove('visible');
-            document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        }, 4000);
+        // setTimeout(function () {
+        //     document.getElementById('ProgressBarCanvas').classList.remove('visible');
+        //     document.getElementById('ProgressBarCanvas').classList.add('hidden');
+        // }, 4000);
 
         
     });
@@ -155,21 +208,21 @@ function init() {
         document.getElementById('reflective').classList.remove('active-button');
         
         // show loading bar
-        document.getElementById('ProgressBarCanvas').classList.remove('hidden');
-        document.getElementById('ProgressBarCanvas').classList.add('visible');
+        // document.getElementById('ProgressBarCanvas').classList.remove('hidden');
+        // document.getElementById('ProgressBarCanvas').classList.add('visible');
 
         // load new model
-        loadModel(model2);
+        loadModel(models[1]);
         setNoLight();
         bloomPass.threshold = 0;
         bloomPass.strength = 0.3;
         
         
         // hide loading bar after timeout
-        setTimeout(function () {
-            document.getElementById('ProgressBarCanvas').classList.remove('visible');
-            document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        }, 4000);
+        // setTimeout(function () {
+        //     document.getElementById('ProgressBarCanvas').classList.remove('visible');
+        //     document.getElementById('ProgressBarCanvas').classList.add('hidden');
+        // }, 4000);
     });
 
     document.getElementById('reflective').addEventListener('click', function () {
@@ -182,20 +235,20 @@ function init() {
         document.getElementById('reflective').classList.add('active-button');
         
         // show loading bar
-        document.getElementById('ProgressBarCanvas').classList.remove('hidden');
-        document.getElementById('ProgressBarCanvas').classList.add('visible');
+        // document.getElementById('ProgressBarCanvas').classList.remove('hidden');
+        // document.getElementById('ProgressBarCanvas').classList.add('visible');
 
         // load new model
-        loadModel(model3);
+        loadModel(models[2]);
         setLowLight();
         bloomPass.threshold = 0;
         bloomPass.strength = 2.5;
         
         // hide loading bar after timeout
-        setTimeout(function () {
-            document.getElementById('ProgressBarCanvas').classList.remove('visible');
-            document.getElementById('ProgressBarCanvas').classList.add('hidden');
-        }, 4000);
+        // setTimeout(function () {
+        //     document.getElementById('ProgressBarCanvas').classList.remove('visible');
+        //     document.getElementById('ProgressBarCanvas').classList.add('hidden');
+        // }, 4000);
     });
 
 
@@ -239,4 +292,8 @@ function animate() {
     const delta = clock.getDelta();
     controls.update( delta );
     composer.render();
+}
+
+function onTransitionEnd( event ) {
+    event.target.classList.add('hidden');
 }
