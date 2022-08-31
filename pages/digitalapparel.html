@@ -17,11 +17,6 @@
 <body class="bg-black margin-0">
 
   <!-- Loading progress bar -->
-  <!-- <div id="ProgressBar" class="vh-100 vw-100">
-    <div id="Progress" style="font-family: 'DolceVitaBold'">Loading</div>
-  </div> -->
-
-  <!-- Loading progress bar -->
   <section id="loading-screen">
     <div id="loader"></div>
   </section>
@@ -445,10 +440,11 @@
 
   <!-- Custom script -->
   <script>
-    // hide loading screen
-    const el = document.getElementById("loading-screen");
-    el.classList.add('hidden');
-    el.classList.remove('visible');
+    window.onload = function () {
+      const el = document.getElementById("loading-screen");
+      el.classList.add('hidden');
+      el.classList.remove('visible');
+    }
   </script>
 
 </body>
