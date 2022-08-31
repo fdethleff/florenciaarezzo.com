@@ -212,10 +212,10 @@
   width: 50%;
   padding: 2rem;
   background-color: rgb(17, 17, 17);
-  animation-name: fadeOut;
-  animation-iteration-count: 1;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
+  /* animation-name: fadeOut;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; */
 }
 
 #Progress {
@@ -232,40 +232,11 @@
   border-radius: 7px;
   border-color: #ffffff;
   animation-name: progressBar;
-  animation-iteration-count: 1;
-  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
-#ProgressBarCanvas {
-  position: absolute;
-  z-index: 30;
-  width: 30%;
-  padding: 1rem;
-  background-color: rgb(17, 17, 17);
-  animation-name: fadeOut;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-}
-
-#ProgressCanvas {
-  position: fixed;
-  top: 50%;
-  left: 20%;
-  margin-left: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-image: url("assets/patterns/canvas_loading_bg.svg");
-  height: 1%;
-  border-radius: 10px;
-  animation-name: progressBarCanvas;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-}
 
 @keyframes progressBar {
   0% {

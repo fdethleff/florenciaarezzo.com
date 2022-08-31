@@ -13,6 +13,11 @@ window.onload = function () {
   } else {
     heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
   }
+
+  // hide loading screen
+  const el = document.getElementById("loading-screen");
+  el.classList.add('hidden');
+  el.classList.remove('visible');
 };
 
 window.addEventListener("scroll", function () {
