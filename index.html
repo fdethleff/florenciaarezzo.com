@@ -148,6 +148,7 @@
 
   <!-- Custom scripts -->
   <script src="main.js"></script>
+  <script type="module" src="webgl.js"></script>
   <script type="x-shader/x-vertex" id="vertexshader">
       attribute float scale;
 
@@ -165,7 +166,6 @@
       	gl_FragColor = vec4( color, 1.0 );
       }
     </script>
-  <script type="module" src="webgl.js"></script>
 
 
 </body>
