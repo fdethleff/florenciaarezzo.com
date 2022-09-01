@@ -201,6 +201,7 @@ function init() {
     controls.autoRotate = true;
     controls.maxPolarAngle = Math.PI / 2;
     controls.minPolarAngle = 0;
+    controls.enableZoom = false;
 
 
     // Axes
