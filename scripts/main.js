@@ -1,10 +1,7 @@
 window.onload = function () {
   let heroVideoDirectory = "assets/videos/";
   let heroVideo = document.getElementById("hero-video");
-  let blackout = document.getElementById("blackout");
-
-  blackout.style.height = `${window.innerHeight * 2.33}px`;
-
+  
   if (window.innerWidth < 768) {
     heroVideo.setAttribute(
       "src",
@@ -14,30 +11,11 @@ window.onload = function () {
     heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
   }
 
-  // hide loading screen
   const el = document.getElementById("loading-screen");
   el.classList.add('hidden');
   el.classList.remove('visible');
 };
 
-window.addEventListener("scroll", function () {
-  if (window.innerWidth >= 992) {
-    let hero = document.getElementById("hero");
-    let blackout = document.getElementById("blackout");
-    let content = document.getElementById("content");
-    if (window.scrollY > 10) {
-      hero.style.transform = `translateY(-${window.innerHeight}px)`;
-      blackout.style.opacity = 0;
-      blackout.classList.remove("z-10");
-      let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
-      content.style.top = `${dynamicTopValue}px`;
-    } else {
-      hero.style.transform = "translateY(0)";
-      blackout.style.opacity = 1;
-      blackout.classList.add("z-10");
-    }
-  }
-});
 
 window.addEventListener("resize", function () {
   let heroVideo = document.getElementById("hero-video");
@@ -52,31 +30,7 @@ window.addEventListener("resize", function () {
   }
 });
 
-document.getElementById("clickMe").addEventListener("click", function () {
-  let heroVideo = document.getElementById("hero-video");
-  if (heroVideo.paused) {
-    heroVideo.play();
-  } else {
-    heroVideo.pause();
-  }
+let projectsButton = document.getElementById("projectsHeaderLink");
+projectsButton.addEventListener("click", function () {
+  window.scrollBy(0, window.innerHeight);
 });
-
-document
-  .getElementById("projectsHeaderLink")
-  .addEventListener("click", function () {
-    hero.style.transform = `translateY(-${window.innerHeight}px)`;
-    blackout.style.opacity = 0;
-    blackout.classList.remove("z-10");
-    let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
-    content.style.top = `${dynamicTopValue}px`;
-  });
-
-document
-  .getElementById("heroScrollArrow")
-  .addEventListener("click", function () {
-    hero.style.transform = `translateY(-${window.innerHeight}px)`;
-    blackout.style.opacity = 0;
-    blackout.classList.remove("z-10");
-    let dynamicTopValue = Math.min(window.innerHeight / 5, window.scrollY);
-    content.style.top = `${dynamicTopValue}px`;
-  });

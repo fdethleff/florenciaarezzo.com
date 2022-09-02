@@ -191,9 +191,6 @@ function init() {
     });
 
 
-
-
-
     // Controls
     controls = new OrbitControls(camera, renderer.domElement);
     controls.minDistance = 1;
