@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>florenciaarezzo.com | NFT Projects</title>
+    <title>florenciaarezzo.com | Virtual Reality</title>
     <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,6 +14,7 @@
 </head>
 
 <body class="bg-black overflow-x-hidden margin-0">
+
 
     <!-- Loading spinner -->
     <section id="loading-screen" style="z-index: 20;">
@@ -30,14 +31,14 @@
                         fill="currentFill" />
                 </svg>
                 <p class="text-white mt-6 tracking-widest animate-pulse" style="font-family: 'DolceVitaBold'">
-                    Loading...
+                    Preparing Experience...
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Navbar -->
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-black">
         <div class="container-fluid">
 
@@ -58,10 +59,10 @@
                         <a class="nav-link" href="../pages/animations.html">Animations</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="../pages/virtualreality.html">Virtual Reality</a>
+                        <a class="nav-link active" href="../pages/virtualreality.html">Virtual Reality</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link active" href="../pages/nftprojects.html">NFT Projects</a>
+                        <a class="nav-link" href="../pages/nftprojects.html">NFT Projects</a>
                     </li>
                 </ul>
             </div>
@@ -70,6 +71,7 @@
 
     <!-- Scroll hint -->
     <div id="btn-down-one-screen" class="down-arrow"></div>
+
 
     <!-- Back to top button -->
     <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
@@ -83,12 +85,30 @@
         </svg>
     </button>
 
-    <!-- First stripe -->
 
-    <div class="h-screen w-screen">
-        <div class="h-1/2 w-full flex items-center justify-center">
-            <div class="text-center text-xl md:text-4xl text-white" style="font-family: 'DolceVitaBold'">SOON</div>
+    <!-- Scene buttons -->
+    <button id="day" class="absolute active-button" style="right: 10%; top: 43%;">DAY
+        MODE</button>
+    <button id="reflective" class="absolute inactive-button" style="right: 10%; top: 50%;">REFLECTIVE
+        MODE</button>
+    <button id="night" class="absolute inactive-button" style="right: 10%; top: 57%;">NIGHT
+        MODE</button>
+
+    <!-- Strip 1 -->
+    <div id="canvas" class="w-100 h-100" style="cursor: grab;"></div>
+
+
+    <!-- Stripe 2 -->
+    <div class="container-fluid relative">
+
+        <!-- Video -->
+        <div class="row row-cols-1">
+            <div class="col p-0">
+                <video class="vw-100 vh-100 object-cover" src="../assets/videos/VR_video.m4v" autoplay loop muted
+                    playsinline preload="auto" onclick="this.paused ? this.play() : this.pause();"></video>
+            </div>
         </div>
+
     </div>
 
     <!-- Footer -->
@@ -113,8 +133,41 @@
 
 
     <!-- Custom script -->
-    <script type="module" src="../scripts/loader.js"></script>
+    <script type="module" src="../scripts/vr.js"></script>
     <script type="module" src="../scripts/utils.js"></script>
+
+
+    <!-- Three.js -->
+    <script async src="https://unpkg.com/es-module-shims@1.5.17/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.143.0/build/three.module.js",
+          "orbitControls": "https://unpkg.com/three@0.143.0/examples/jsm/controls/OrbitControls.js",
+          "GLTFLoader": "https://unpkg.com/three@0.143.0/examples/jsm/loaders/GLTFLoader.js",
+          "DRACOLoader": "https://unpkg.com/three@0.143.0/examples/jsm/loaders/DRACOLoader.js",
+          "EffectComposer": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/EffectComposer.js",
+          "RenderPass": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/RenderPass.js",
+          "UnrealBloomPass": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+          "ShaderPass": "https://unpkg.com/three@0.143.0/examples/jsm/postprocessing/ShaderPass.js"
+        }
+      }
+    </script>
+    <script type="x-shader/x-vertex" id="vertexshader">
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+        uniform sampler2D baseTexture;
+        uniform sampler2D bloomTexture;
+        varying vec2 vUv;
+        void main() {
+            gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
+        }
+    </script>
 
 
     <!-- Bootstrap script -->
@@ -124,6 +177,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
+
+
 
 </body>
 
