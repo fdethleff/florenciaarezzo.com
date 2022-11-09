@@ -3,12 +3,9 @@ window.onload = function () {
   let heroVideo = document.getElementById("hero-video");
 
   if (window.innerWidth < 768) {
-    heroVideo.setAttribute(
-      "src",
-      heroVideoDirectory + "walking-animation-mobile.mp4"
-    );
+    heroVideo.setAttribute("src", heroVideoDirectory + "three_amigos_sm.mp4");
   } else {
-    heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.mp4");
+    heroVideo.setAttribute("src", heroVideoDirectory + "three_amigos_lg.mp4");
   }
 
   const el = document.getElementById("loading-screen");
@@ -20,12 +17,9 @@ window.addEventListener("resize", function () {
   let heroVideo = document.getElementById("hero-video");
   let heroVideoDirectory = "assets/videos/";
   if (window.innerWidth < 768) {
-    heroVideo.setAttribute(
-      "src",
-      heroVideoDirectory + "walking-animation-mobile.mp4"
-    );
+    heroVideo.setAttribute("src", heroVideoDirectory + "three_amigos_sm.mp4");
   } else {
-    heroVideo.setAttribute("src", heroVideoDirectory + "walking-animation.m4v");
+    heroVideo.setAttribute("src", heroVideoDirectory + "three_amigos_lg.mp4");
   }
 });
 
