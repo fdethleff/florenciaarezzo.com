@@ -27,3 +27,24 @@ let projectsButton = document.getElementById("projectsHeaderLink");
 projectsButton.addEventListener("click", function () {
   window.scrollBy(0, window.innerHeight);
 });
+
+document.getElementById("audio-button").addEventListener("click", function () {
+  // toggle audio on and off
+  let video = document.getElementById("hero-video");
+  video.muted = !video.muted;
+
+  // if not muted switch to class audio-button-off
+  let audio_button = document.getElementById("audio-button");
+  if (video.muted) {
+    audio_button.classList.remove("audio-button-on");
+    audio_button.classList.add("audio-button-off");
+    audio_button.setAttribute("src", "assets/icons/sound-off-icon.svg");
+  }
+
+  // if muted switch to class audio-button-on
+  else {
+    audio_button.classList.remove("audio-button-off");
+    audio_button.classList.add("audio-button-on");
+    audio_button.setAttribute("src", "assets/icons/sound-full-icon.svg");
+  }
+});

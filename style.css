@@ -176,6 +176,18 @@
   color: #fff;
 }
 
+.audio-button-on {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+}
+
+.audio-button-off {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+}
+
 .down-arrow:after {
   content: "";
   position: absolute;
