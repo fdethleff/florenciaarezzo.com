@@ -24,8 +24,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse visible" id="navbar">
-                <ul class="navbar-nav me-auto mb-2 mt-4 mb-md-0" style=" font-family: 'DolceVitaBold'">
+            <div class="collapse navbar-collapse visible" id="navbar" style=" font-family: 'DolceVitaBold'">
+                <ul class="navbar-nav me-auto mb-2 mt-4 mb-md-0">
                     <li class=" nav-item mx-2">
                         <a class="nav-link" href="../index.html">Main</a>
                     </li>
@@ -42,9 +42,28 @@
                         <a class="nav-link" href="../pages/nftprojects.html">NFT Projects</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav ml-auto mb-2 mt-4 mb-md-0">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-light py-0 ">
+                            <a class="nav-link" href="../pages/portfolio.html">Portfolio</a>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Social links PWR -->
+    <div class="absolute text-white text-xs lg:text-sm flex z-10 top-[3%] lg:top-[10%] right-[5%]"
+        style="font-family: 'DolceVita'">
+        <a class="flex hover:text-slate-500" href="https://www.instagram.com/zero10.app/" target="_blank">
+            <p class="mx-1 leading-6">ZERO10.APP</p>
+            <img class="h-6 mx-1" src="../assets/icons/Instagram_logo.png" alt="" />
+        </a>
+        <a href="https://on.zero10.app/garment/flors-re-set" target="_blank">
+            <img class="h-6 mx-1" src="../assets/icons/Web_logo.png" alt="" />
+        </a>
+    </div>
 
     <!-- Scroll hint -->
     <div id="btn-down-one-screen" class="down-arrow"></div>
@@ -62,24 +81,31 @@
         </svg>
     </button>
 
-    <!-- Content -->
-    <div class="h-screen w-screen">
-        <div class="h-1/2 w-full flex items-center justify-center">
-            <div class="text-center text-xl md:text-4xl text-white" style="font-family: 'DolceVitaBold'">SOON</div>
+    <!-- Stripe 1 -->
+    <div class="container-fluid relative">
+        <div class="row row-cols-1 row-cols-xl-4 justify-center">
+            <div class="col w-1/12"></div>
+            <div class="col p-10 w-4/12">
+                <video class="object-cover" src="../assets/videos/RE_SET.mov.mp4" autoplay loop muted playsinline
+                    preload="auto" onclick="this.paused ? this.play() : this.pause();" style="height: 100%;"></video>
+            </div>
+            <div class="col p-10 w-6/12">
+                <img class="object-cover" src="../assets/images/ZeroApp_flors.png" alt="" />
+            </div>
+            <div class="col w-1/12"></div>
         </div>
     </div>
 
-    <!-- Stripe 2 -->
+    <!-- Stripe 1 -->
     <div class="container-fluid relative">
-
-        <!-- Video -->
-        <div class="row row-cols-1">
+        <div class="row row-cols-1 row-cols-xl-2">
+            <div class="col p-0 h-2/3">
+                <img class="object-cover" src="../assets/images/Reset_01.png" alt="" />>
+            </div>
             <div class="col p-0">
-                <video class="vw-100 vh-100 object-cover" src="../assets/videos/VR_video.m4v" autoplay loop muted
-                    playsinline preload="auto" onclick="this.paused ? this.play() : this.pause();"></video>
+                <img class="object-cover" src="../assets/images/Reset_02.png" alt="" />
             </div>
         </div>
-
     </div>
 
     <!-- Footer -->

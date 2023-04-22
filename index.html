@@ -112,12 +112,14 @@
         </div>
 
         <div class="relative h-screen w-full">
-          <a class="absolute w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 bg-black px-3 py-4 hover:text-gray-500"
+          <a class="absolute z-10 w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white border-2 bg-black px-3 py-4 hover:text-gray-500"
             href="pages/animations.html">
             Animations
           </a>
 
-          <img class="w-100 h-screen object-cover" src="assets/images/ANIMATIONS2000x2000.jpg" alt="" />
+          <!-- <img class="w-100 h-screen object-cover" src="assets/images/ANIMATIONS2000x2000.jpg" alt="" /> -->
+          <video class="object-cover" src="./assets/videos/ANIMATIONS.mp4" autoplay loop muted playsinline
+            preload="auto" onclick="this.paused ? this.play() : this.pause();" style="height: 100%;"></video>
         </div>
       </div>
     </section>
@@ -131,7 +133,6 @@
             href="pages/virtualreality.html">
             Augmented Reality
           </a>
-
           <img class="w-100 h-screen object-cover" src="assets/images/VIRTUAL REALITY-01.jpg" alt="" />
         </div>
 
