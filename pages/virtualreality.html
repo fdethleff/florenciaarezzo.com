@@ -2,28 +2,38 @@
 <html lang="en">
 
 <head>
+    <!-- CONFIG -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>florenciaarezzo.com | Augmented Reality</title>
     <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.png" />
+
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css" />
-
-    <!-- Bootstrap script -->
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
+
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="../style.css" />
+
+
 </head>
 
 <body class="bg-black overflow-x-hidden margin-0">
 
-    <!-- Navbar -->
+
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-dark bg-black">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
@@ -59,7 +69,8 @@
         </div>
     </nav>
 
-    <!-- Social links PWR -->
+
+    <!-- SOCIAL LINKS -->
     <div class="absolute text-white text-xs lg:text-sm flex z-10 top-[3%] md:top-[13%] right-[5%]"
         style="font-family: 'DolceVita'">
         <a class="flex hover:text-slate-500" href="https://www.instagram.com/zero10.app/" target="_blank">
@@ -72,11 +83,11 @@
     </div>
 
 
-    <!-- Scroll hint -->
+    <!-- SCROLL HINT -->
     <div id="btn-down-one-screen" class="down-arrow"></div>
 
 
-    <!-- Back to top button -->
+    <!-- BACK TO TOP BUTTON -->
     <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
         class="inline-block p-3 bg-gray-300 text-black font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out hidden bottom-5 right-5 fixed z-10"
         id="btn-back-to-top">
@@ -88,20 +99,22 @@
         </svg>
     </button>
 
-    <!-- Stripe 1 -->
+
+    <!-- HERO -->
     <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-5">
-                <video class="object-cover m-auto" src="../assets/videos/RE_SET.mov.mp4" autoplay loop muted playsinline
-                    preload="auto" onclick="this.paused ? this.play() : this.pause();" style="width: 60%;"></video>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5">
+                <video class="mx-auto w-75 object-cover" src="../assets/videos/RE_SET.mov.mp4" autoplay loop muted
+                    playsinline preload="auto" onclick="this.paused ? this.play() : this.pause();"></video>
             </div>
-            <div class="col-12 col-lg-7">
-                <img class="object-cover" src="../assets/images/ZeroApp_flors.png" alt="" />
+            <div class="col-lg-7">
+                <img class="img-fluid object-cover" src="../assets/images/ZeroApp_flors.png" alt="" />
             </div>
         </div>
     </div>
 
-    <!-- Stripe 1 -->
+
+    <!-- GALLERY -->
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0 m-0">
@@ -113,7 +126,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
+
+    <!-- FOOTER -->
     <footer class="my-12 flex justify-center">
         <a href="pages/about.html">
             <img class="mx-3 cursor-pointer" src="../assets/icons/email.png" style="height: 1rem" alt="" />
@@ -131,12 +145,9 @@
             <img class="mx-3 cursor-pointer" src="../assets/icons/whatsapp.png" style="height: 1rem" alt="" />
         </a>
     </footer>
+
+
     <div style="height: 10px"></div>
-
-
-
-
-
 
 </body>
 
